@@ -1,0 +1,7 @@
+title: "Tarek Nassan Portfolio"
+description: "Personal portfolio showcasing Flutter & PHP/MySQL projects with GetX & Firebase integrations."
+url: "https://tareknassan.github.io"
+baseurl: "/tareknassan.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
