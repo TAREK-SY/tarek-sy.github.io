@@ -5,17 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>معرض أعمال Tarek Nassan</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #333; }
-    header { background: #004466; color: white; padding: 2rem; text-align: center; }
-    section { max-width: 1000px; margin: 2rem auto; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    h2 { color: #004466; margin-top: 0; }
-    img, video { max-width: 100%; border-radius: 4px; margin-bottom: 1rem; display: block; }
-    .project { margin-bottom: 3rem; }
-    .project p { margin: 0.5rem 0 1rem; }
-    video { margin-top: 0.5rem; }
-    details { margin-bottom: 1rem; }
-    summary { font-weight: bold; cursor: pointer; }
-    pre { background: #f0f0f0; padding: 1rem; overflow-x: auto; border-radius: 4px; }
+    /* Base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f0f2f5; color: #333; line-height: 1.6;
+    }
+    header {
+      background: #004466; color: #fff;
+      padding: 2rem 1rem; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1 { margin: 0; font-size: 2.5rem; font-weight: 700; }
+    header p  { margin: .5rem 0 0; font-size: 1.1rem; font-weight: 300; }
+
+    .container {
+      max-width: 1200px; margin: 2rem auto; padding: 0 1rem;
+    }
+
+    /* Project Card */
+    .project {
+      background: #fff; border-radius: 10px;
+      margin-bottom: 2.5rem; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+    .project:hover { transform: translateY(-5px); }
+
+    .project-header {
+      background: #002b36; color: #fff;
+      padding: 1.2rem 1.5rem;
+    }
+    .project-header h2 { margin: 0; font-size: 1.8rem; font-weight: 600; }
+    .project-header p  { margin: .4rem 0 0; font-size: 1rem; font-weight: 300; }
+
+    /* Media Grid */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 1rem; padding: 1.5rem;
+    }
+    .media-grid img,
+    .media-grid video {
+      width: 100%; border-radius: 6px; background: #000;
+      display: block;
+    }
+    .media-grid video { max-height: 200px; object-fit: cover; }
+
+    /* README details */
+    details { margin: 0 1.5rem 1.5rem; }
+    summary {
+      font-size: 1rem; font-weight: 500;
+      cursor: pointer; color: #004466;
+      padding: .5rem 0;
+    }
+    pre {
+      background: #eee; padding: 1rem;
+      border-radius: 6px; overflow-x: auto;
+      font-size: .9rem; line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width:600px) {
+      header h1 { font-size:2rem; }
+      .project-header h2 { font-size:1.4rem; }
+      .media-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -24,120 +79,132 @@
     <p>Flutter &amp; PHP/MySQL Developer | GetX &amp; Firebase</p>
   </header>
 
-  <section>
-    <!-- مشروع AlphaGBC -->
+  <div class="container">
+    <!-- AlphaGBC -->
     <div class="project">
-      <h2>AlphaGBC App</h2>
-      <p><strong>التقنيات:</strong> Flutter · GetX · Firebase Authentication · Firestore</p>
-      <video controls src="assets/images/AlphaGBC/1.mp4"></video>
-      <video controls src="assets/images/AlphaGBC/2.mp4"></video>
-      <video controls src="assets/images/AlphaGBC/3.mp4"></video>
-      <video controls src="assets/images/AlphaGBC/4.mp4"></video>
+      <div class="project-header">
+        <h2>AlphaGBC App</h2>
+        <p>Flutter · GetX · Firebase Authentication · Firestore</p>
+      </div>
+      <div class="media-grid">
+        <video controls src="assets/images/AlphaGBC/1.mp4"></video>
+        <video controls src="assets/images/AlphaGBC/2.mp4"></video>
+        <video controls src="assets/images/AlphaGBC/3.mp4"></video>
+        <video controls src="assets/images/AlphaGBC/4.mp4"></video>
+      </div>
       <details>
         <summary>معاينة محتوى README</summary>
         <pre>
-<هذا العرض يحوي صور وفيديوهات للموقع الالكتروني الخاص بشركة AlphaGBC الذي قمت بانشاءه بالاضافة الى قاعدة البيانات mesql و كود back-end الخاص به بلغة php>
+هذا العرض يحوي صور وفيديوهات للموقع الالكتروني الخاص بشركة AlphaGBC الذي قمت بإنشائه بالإضافة إلى قاعدة البيانات MySQL وكود Back-end الخاص به بلغة PHP.
         </pre>
       </details>
     </div>
 
-    <!-- مشروع Sahlha Store -->
+    <!-- Sahlha Store -->
     <div class="project">
-      <h2>Sahlha Store Web</h2>
-      <p><strong>التقنيات:</strong> Flutter Web · PHP · MySQL · RESTful API</p>
-      <img src="assets/images/sahlha/1.jpg" alt="Sahlha 1" />
-      <img src="assets/images/sahlha/2.jpg" alt="Sahlha 2" />
-      <img src="assets/images/sahlha/3.jpg" alt="Sahlha 3" />
-      <img src="assets/images/sahlha/4.jpg" alt="Sahlha 4" />
-      <img src="assets/images/sahlha/5.jpg" alt="Sahlha 5" />
-      <img src="assets/images/sahlha/6.jpg" alt="Sahlha 6" />
-      <img src="assets/images/sahlha/7.jpg" alt="Sahlha 7" />
-      <img src="assets/images/sahlha/8.jpg" alt="Sahlha 8" />
-      <img src="assets/images/sahlha/9.jpg" alt="Sahlha 9" />
-      <img src="assets/images/sahlha/10.jpg" alt="Sahlha 10" />
-      <img src="assets/images/sahlha/11.jpg" alt="Sahlha 11" />
-      <img src="assets/images/sahlha/12.jpg" alt="Sahlha 12" />
-      <img src="assets/images/sahlha/13.jpg" alt="Sahlha 13" />
-      <img src="assets/images/sahlha/14.jpg" alt="Sahlha 14" />
-      <img src="assets/images/sahlha/15.jpg" alt="Sahlha 15" />
+      <div class="project-header">
+        <h2>Sahlha Store Web</h2>
+        <p>Flutter Web · PHP · MySQL · RESTful API</p>
+      </div>
+      <div class="media-grid">
+        <img src="assets/images/sahlha/1.jpg" alt="Sahlha 1" />
+        <img src="assets/images/sahlha/2.jpg" alt="Sahlha 2" />
+        <img src="assets/images/sahlha/3.jpg" alt="Sahlha 3" />
+        <img src="assets/images/sahlha/4.jpg" alt="Sahlha 4" />
+        <img src="assets/images/sahlha/5.jpg" alt="Sahlha 5" />
+        <img src="assets/images/sahlha/6.jpg" alt="Sahlha 6" />
+        <img src="assets/images/sahlha/7.jpg" alt="Sahlha 7" />
+        <img src="assets/images/sahlha/8.jpg" alt="Sahlha 8" />
+        <img src="assets/images/sahlha/9.jpg" alt="Sahlha 9" />
+        <img src="assets/images/sahlha/10.jpg" alt="Sahlha 10" />
+        <img src="assets/images/sahlha/11.jpg" alt="Sahlha 11" />
+        <img src="assets/images/sahlha/12.jpg" alt="Sahlha 12" />
+        <img src="assets/images/sahlha/13.jpg" alt="Sahlha 13" />
+        <img src="assets/images/sahlha/14.jpg" alt="Sahlha 14" />
+        <img src="assets/images/sahlha/15.jpg" alt="Sahlha 15" />
+      </div>
       <details>
         <summary>معاينة محتوى README</summary>
         <pre>
-<هذا العرض يحوي صور الشاشات في تطبيق سهلها وهو متجر الكتروني قمت بتصميمه وتنفيذه بشكل كامل Front-end و Back-end بالاضافة الى قاعدة البيانات وربطهم معا>
+هذا العرض يحوي صور الشاشات في تطبيق سهلها وهو متجر الكتروني قمت بتصميمه وتنفيذه بشكل كامل Front-end و Back-end بالإضافة إلى قاعدة البيانات وربطهم معاً.
         </pre>
       </details>
     </div>
 
-    <!-- مشروع Shella Service App -->
+    <!-- Shella Service -->
     <div class="project">
-      <h2>Shella Service App</h2>
-      <p><strong>التقنيات:</strong> Flutter · PHP · MySQL · Firebase Cloud Messaging</p>
-      <img src="assets/images/shella/AddBalanceWidget.png" alt="AddBalanceWidget" />
-      <img src="assets/images/shella/SelectService.png" alt="SelectService" />
-      <video controls src="assets/images/shella/SelectServiceType.mp4"></video>
-      <img src="assets/images/shella/AddCredit.png" alt="AddCredit" />
-      <img src="assets/images/shella/SelectServiceDialogWeb.png" alt="SelectServiceDialogWeb" />
-      <video controls src="assets/images/shella/AliashtirakFiQaydia.mp4"></video>
-      <img src="assets/images/shella/Balance Transfer.png" alt="Balance Transfer" />
-      <img src="assets/images/shella/SelectTheTypeOfRequest.png" alt="SelectTheTypeOfRequest" />
-      <img src="assets/images/shella/Balance TransferWidget.png" alt="Balance TransferWidget" />
-      <img src="assets/images/shella/SelectTheTypeOfRequestDialogWeb.png" alt="SelectTheTypeOfRequestDialogWeb" />
-      <video controls src="assets/images/shella/BookingConfirmationSuccess.mp4"></video>
-      <img src="assets/images/shella/Servemepage.png" alt="Servemepage" />
-      <video controls src="assets/images/shella/CartSideMenu.mp4"></video>
-      <video controls src="assets/images/shella/ServiceInformation.mp4"></video>
-      <video controls src="assets/images/shella/Confirm ReservationWeb.mp4"></video>
-      <video controls src="assets/images/shella/ServiceProviders.mp4"></video>
-      <video controls src="assets/images/shella/ShurutQaydiha.mp4"></video>
-      <img src="assets/images/shella/EditContactinformation.png" alt="EditContactinformation" />
-      <img src="assets/images/shella/SuccessDialog.png" alt="SuccessDialog" />
-      <img src="assets/images/shella/EditContactinformationWeb.png" alt="EditContactinformationWeb" />
-      <img src="assets/images/shella/Successful Operation.png" alt="Successful Operation" />
-      <video controls src="assets/images/shella/HelpAndSupport.mp4"></video>
-      <video controls src="assets/images/shella/HowWasYourExperience.mp4"></video>
-      <video controls src="assets/images/shella/Technical Tracking.mp4"></video>
-      <video controls src="assets/images/shella/Technical TrackingWeb.mp4"></video>
-      <img src="assets/images/shella/IndividualsServicePage.png" alt="IndividualsServicePage" />
-      <img src="assets/images/shella/MahfazatQayduha.png" alt="MahfazatQayduha" />
-      <video controls src="assets/images/shella/TermsAndConditions.mp4"></video>
-      <video controls src="assets/images/shella/My new address.mp4"></video>
-      <video controls src="assets/images/shella/VerifySourceOfIncome.mp4"></video>
-      <video controls src="assets/images/shella/MyStatistics.mp4"></video>
-      <img src="assets/images/shella/Your favorites.png" alt="Your favorites" />
-      <video controls src="assets/images/shella/accountdetails.mp4"></video>
-      <video controls src="assets/images/shella/MyWallet.mp4"></video>
-      <img src="assets/images/shella/advertisement.png" alt="advertisement" />
-      <img src="assets/images/shella/OperationFailure.png" alt="OperationFailure" />
-      <video controls src="assets/images/shella/alfares saudi arabia screen.mp4"></video>
-      <img src="assets/images/shella/OrderDetails.png" alt="OrderDetails" />
-      <video controls src="assets/images/shella/confirm Reservation.mp4"></video>
-      <video controls src="assets/images/shella/PrivacyPolicy.mp4"></video>
-      <video controls src="assets/images/shella/Individual Services.mp4"></video>
-      <video controls src="assets/images/shella/infoOfService.mp4"></video>
-      <video controls src="assets/images/shella/RaiseAProblem.mp4"></video>
-      <img src="assets/images/shella/onboarding1.png" alt="onboarding1" />
-      <video controls src="assets/images/shella/Refund Policy.mp4"></video>
-      <video controls src="assets/images/shella/ReviewOfAService.mp4"></video>
-      <img src="assets/images/shella/onboarding2.png" alt="onboarding2" />
-      <img src="assets/images/shella/onboarding3.png" alt="onboarding3" />
-      <img src="assets/images/shella/onboarding4.png" alt="onboarding4" />
-      <img src="assets/images/shella/order tracking.png" alt="order tracking" />
-      <video controls src="assets/images/shella/savedaddresses.mp4"></video>
-      <img src="assets/images/shella/schedule order.png" alt="schedule order" />
-      <img src="assets/images/shella/searchfilter.png" alt="searchfilter" />
-      <video controls src="assets/images/shella/service.mp4"></video>
-      <video controls src="assets/images/shella/splashscreen.mp4"></video>
-      <img src="assets/images/shella/start tracking order.png" alt="start tracking order" />
-      <img src="assets/images/shella/successful order.png" alt="successful order" />
-      <video controls src="assets/images/shella/web home screen.mp4"></video>
-      <img src="assets/images/shella/Notification Center.png" alt="Notification Center" />
+      <div class="project-header">
+        <h2>Shella Service App</h2>
+        <p>Flutter · PHP · MySQL · Firebase Cloud Messaging</p>
+      </div>
+      <div class="media-grid">
+        <img  src="assets/images/shella/AddBalanceWidget.png" alt="AddBalanceWidget" />
+        <img  src="assets/images/shella/SelectService.png" alt="SelectService" />
+        <video controls src="assets/images/shella/SelectServiceType.mp4"></video>
+        <img  src="assets/images/shella/AddCredit.png" alt="AddCredit" />
+        <img  src="assets/images/shella/SelectServiceDialogWeb.png" alt="SelectServiceDialogWeb" />
+        <video controls src="assets/images/shella/AliashtirakFiQaydia.mp4"></video>
+        <img  src="assets/images/shella/Balance Transfer.png" alt="Balance Transfer" />
+        <img  src="assets/images/shella/SelectTheTypeOfRequest.png" alt="SelectTheTypeOfRequest" />
+        <img  src="assets/images/shella/Balance TransferWidget.png" alt="Balance TransferWidget" />
+        <img  src="assets/images/shella/SelectTheTypeOfRequestDialogWeb.png" alt="SelectTheTypeOfRequestDialogWeb" />
+        <video controls src="assets/images/shella/BookingConfirmationSuccess.mp4"></video>
+        <img  src="assets/images/shella/Servemepage.png" alt="Servemepage" />
+        <video controls src="assets/images/shella/CartSideMenu.mp4"></video>
+        <video controls src="assets/images/shella/ServiceInformation.mp4"></video>
+        <video controls src="assets/images/shella/Confirm ReservationWeb.mp4"></video>
+        <video controls src="assets/images/shella/ServiceProviders.mp4"></video>
+        <video controls src="assets/images/shella/ShurutQaydiha.mp4"></video>
+        <img  src="assets/images/shella/EditContactinformation.png" alt="EditContactinformation" />
+        <img  src="assets/images/shella/SuccessDialog.png" alt="SuccessDialog" />
+        <img  src="assets/images/shella/EditContactinformationWeb.png" alt="EditContactinformationWeb" />
+        <img  src="assets/images/shella/Successful Operation.png" alt="Successful Operation" />
+        <video controls src="assets/images/shella/HelpAndSupport.mp4"></video>
+        <video controls src="assets/images/shella/HowWasYourExperience.mp4"></video>
+        <video controls src="assets/images/shella/Technical Tracking.mp4"></video>
+        <video controls src="assets/images/shella/Technical TrackingWeb.mp4"></video>
+        <img  src="assets/images/shella/IndividualsServicePage.png" alt="IndividualsServicePage" />
+        <img  src="assets/images/shella/MahfazatQayduha.png" alt="MahfazatQayduha" />
+        <video controls src="assets/images/shella/TermsAndConditions.mp4"></video>
+        <video controls src="assets/images/shella/My new address.mp4"></video>
+        <video controls src="assets/images/shella/VerifySourceOfIncome.mp4"></video>
+        <video controls src="assets/images/shella/MyStatistics.mp4"></video>
+        <img  src="assets/images/shella/Your favorites.png" alt="Your favorites" />
+        <video controls src="assets/images/shella/accountdetails.mp4"></video>
+        <video controls src="assets/images/shella/MyWallet.mp4"></video>
+        <img  src="assets/images/shella/advertisement.png" alt="advertisement" />
+        <img  src="assets/images/shella/OperationFailure.png" alt="OperationFailure" />
+        <video controls src="assets/images/shella/alfares saudi arabia screen.mp4"></video>
+        <img  src="assets/images/shella/OrderDetails.png" alt="OrderDetails" />
+        <video controls src="assets/images/shella/confirm Reservation.mp4"></video>
+        <video controls src="assets/images/shella/PrivacyPolicy.mp4"></video>
+        <video controls src="assets/images/shella/Individual Services.mp4"></video>
+        <video controls src="assets/images/shella/infoOfService.mp4"></video>
+        <video controls src="assets/images/shella/RaiseAProblem.mp4"></video>
+        <img  src="assets/images/shella/onboarding1.png" alt="onboarding1" />
+        <video controls src="assets/images/shella/Refund Policy.mp4"></video>
+        <video controls src="assets/images/shella/ReviewOfAService.mp4"></video>
+        <img  src="assets/images/shella/onboarding2.png" alt="onboarding2" />
+        <img  src="assets/images/shella/onboarding3.png" alt="onboarding3" />
+        <img  src="assets/images/shella/onboarding4.png" alt="onboarding4" />
+        <img  src="assets/images/shella/order tracking.png" alt="order tracking" />
+        <video controls src="assets/images/shella/savedaddresses.mp4"></video>
+        <img  src="assets/images/shella/schedule order.png" alt="schedule order" />
+        <img  src="assets/images/shella/searchfilter.png" alt="searchfilter" />
+        <video controls src="assets/images/shella/service.mp4"></video>
+        <video controls src="assets/images/shella/splashscreen.mp4"></video>
+        <img  src="assets/images/shella/start tracking order.png" alt="start tracking order" />
+        <img  src="assets/images/shella/successful order.png" alt="successful order" />
+        <video controls src="assets/images/shella/web home screen.mp4"></video>
+        <img  src="assets/images/shella/Notification Center.png" alt="Notification Center" />
+      </div>
       <details>
         <summary>معاينة محتوى README</summary>
         <pre>
-<تطبيق المتجر الالكتروني السعودي shella كنت ضمن الفريق الخاص بتصميم واجهاته من تطبيق وموقع الكتروني بالاضافة الى القيام بالربط مابين FRONT-END و BACK-END الخاصة بهم وهذا العرض يحوي صور وفيديوهات للصفحات التي قمت ببرمجتها وربطها>
+تطبيق المتجر الالكتروني السعودي shella: كنت ضمن الفريق الخاص بتصميم واجهات التطبيق والموقع، بالإضافة إلى الربط بين Front-End وBack-End. هذا العرض يحوي صور وفيديوهات للصفحات التي قمت ببرمجتها وربطها معاً.
         </pre>
       </details>
     </div>
-  </section>
+  </div>
 </body>
 </html>
