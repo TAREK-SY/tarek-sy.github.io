@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages SPA routing fix
+        // This file handles 404 errors for single-page applications
+        // by redirecting to index.html with the original path preserved
+        
+        (function() {
+            // Get the path that was requested
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            
+            // Store the path in sessionStorage
+            sessionStorage.redirect = path + search + hash;
+            
+            // Redirect to index.html
+            window.location.href = '/index.html';
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
