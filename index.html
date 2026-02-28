@@ -225,6 +225,7 @@
         .project-content h3 {
             color: var(--gold);
             margin-bottom: 0.5rem;
+            min-height: 1.5rem;
         }
 
         .project-content p {
@@ -999,47 +1000,166 @@
     </div>
 
     <script>
-        let projectsData = [];
+        // ============ EMBEDDED DATA (NO FETCH NEEDED) ============
+        const projectsData = {
+            "projects": [
+                {
+                    "id": 1,
+                    "nameEn": "Shella",
+                    "nameAr": "شلة",
+                    "descriptionEn": "A comprehensive food delivery mobile application with real-time order tracking, multiple payment methods, and driver management system.",
+                    "descriptionAr": "تطبيق توصيل طعام شامل مع تتبع الطلبات في الوقت الفعلي وطرق دفع متعددة ونظام إدارة السائقين.",
+                    "logo": "images/logo/Shella.png",
+                    "technologies": ["Flutter", "Firebase", "GetX", "Dart", "Google Maps API"],
+                    "images": [
+                        "images/shella/1.jpg",
+                        "images/shella/2.jpg",
+                        "images/shella/3.jpg"
+                    ],
+                    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.food.shala&pcampaignid=web_share",
+                    "websiteUrl": "",
+                    "challengesEn": "Real-time location tracking, payment gateway integration, complex state management",
+                    "challengesAr": "تتبع الموقع في الوقت الفعلي، تكامل بوابة الدفع، إدارة الحالة المعقدة"
+                },
+                {
+                    "id": 2,
+                    "nameEn": "Sahlha Store",
+                    "nameAr": "سهلها",
+                    "descriptionEn": "A multi-app e-commerce ecosystem consisting of customer app, store manager app, delivery driver app, and admin dashboard.",
+                    "descriptionAr": "نظام تجارة إلكترونية متعدد التطبيقات يتضمن تطبيق العميل وتطبيق مدير المتجر وتطبيق السائق ولوحة التحكم.",
+                    "logo": "images/logo/sahlha.png",
+                    "technologies": ["Flutter", "Firebase", "GetX", "Dart", "REST API", "MySQL"],
+                    "images": [
+                        "images/sahlha/1.jpg",
+                        "images/sahlha/2.jpg",
+                        "images/sahlha/3.jpg"
+                    ],
+                    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.SahlhaStore.SahlhaStore&pcampaignid=web_share",
+                    "websiteUrl": "",
+                    "challengesEn": "Multi-app synchronization, role-based access control, inventory management",
+                    "challengesAr": "مزامنة متعددة التطبيقات، التحكم في الوصول بناءً على الأدوار، إدارة المخزون"
+                },
+                {
+                    "id": 3,
+                    "nameEn": "Maher Store",
+                    "nameAr": "ماهر ستور",
+                    "descriptionEn": "An advanced accounting system connecting warehouse with multiple point-of-sale terminals, supporting offline mode with automatic synchronization.",
+                    "descriptionAr": "نظام محاسبة متقدم يربط المستودع مع نقاط البيع المتعددة مع دعم الوضع غير المتصل والمزامنة التلقائية.",
+                    "logo": "images/logo/maher_store.jpg",
+                    "technologies": ["Flutter", "SQLite", "GetX", "Dart", "Local Database", "REST API"],
+                    "images": [
+                        "images/maher-store/1 (1).png",
+                        "images/maher-store/1 (2).png",
+                        "images/maher-store/1 (3).png",
+                        "images/maher-store/1 (4).png",
+                        "images/maher-store/1 (5).png",
+                        "images/maher-store/1 (6).png",
+                        "images/maher-store/1 (7).png",
+                        "images/maher-store/1 (8).png",
+                        "images/maher-store/1 (9).png"
+                    ],
+                    "playStoreUrl": "",
+                    "websiteUrl": "",
+                    "challengesEn": "Offline-first architecture, data synchronization, complex financial calculations",
+                    "challengesAr": "معمارية بدون اتصال أولاً، مزامنة البيانات، حسابات مالية معقدة"
+                },
+                {
+                    "id": 4,
+                    "nameEn": "Alpha GBC",
+                    "nameAr": "ألفا جي بي سي",
+                    "descriptionEn": "A professional website for a technology and logistics solutions company, showcasing services and portfolio.",
+                    "descriptionAr": "موقع احترافي لشركة متخصصة في الحلول التقنية واللوجستية.",
+                    "logo": "images/logo/Alpha_GBC.png",
+                    "technologies": ["React", "PHP", "MySQL", "REST API"],
+                    "images": [
+                        "images/alpha-gbc/1.jpg",
+                        "images/alpha-gbc/2.jpg",
+                        "images/alpha-gbc/3.jpg"
+                    ],
+                    "playStoreUrl": "",
+                    "websiteUrl": "https://alphagbc.com",
+                    "challengesEn": "Responsive design, SEO optimization, performance tuning",
+                    "challengesAr": "التصميم المتجاوب، تحسين محركات البحث، تحسين الأداء"
+                }
+            ],
+            "skills": [
+                {
+                    "category": "Mobile Development",
+                    "categoryAr": "تطوير الموبايل",
+                    "categoryEn": "Mobile Development",
+                    "skills": ["Dart", "Flutter", "GetX", "Firebase", "SQLite", "GeoTracking", "NotificationCallback", "PHP", "MySQL", "RESTful APIs"]
+                },
+                {
+                    "category": "Web Development",
+                    "categoryAr": "تطوير الويب",
+                    "categoryEn": "Web Development",
+                    "skills": ["Dart", "Flutter", "PHP", "MySQL", "RESTful APIs"]
+                },
+                {
+                    "category": "Tools & Version Control",
+                    "categoryAr": "الأدوات والتحكم بالإصدارات",
+                    "categoryEn": "Tools & Version Control",
+                    "skills": ["Git", "GitHub"]
+                }
+            ],
+            "experience": [
+                {
+                    "position": "Freelance Developer",
+                    "company": "Self-Employed",
+                    "period": "2021 - Present",
+                    "descriptionEn": "Developed multiple full-stack applications including Sahlha Store, Maher Store, and Alpha GBC website",
+                    "descriptionAr": "تطوير عدة تطبيقات متكاملة بما فيها متجر سهلها ونظام ماهر وموقع ألفا جي بي سي",
+                    "technologies": ["Flutter", "React", "Firebase", "MySQL"]
+                },
+                {
+                    "position": "Technical Lead",
+                    "company": "Alpha GBC",
+                    "period": "2022 - 2024",
+                    "descriptionEn": "Led development team for multiple projects, architected scalable solutions",
+                    "descriptionAr": "قيادة فريق التطوير لعدة مشاريع، تصميم حلول قابلة للتوسع",
+                    "technologies": ["Flutter", "React", "PHP", "MySQL"]
+                },
+                {
+                    "position": "Mobile Developer",
+                    "company": "Portal Logic",
+                    "period": "2020 - 2022",
+                    "descriptionEn": "Developed and maintained multiple Flutter applications for various clients",
+                    "descriptionAr": "تطوير والحفاظ على عدة تطبيقات Flutter لعملاء مختلفين",
+                    "technologies": ["Flutter", "Firebase", "GetX"]
+                }
+            ]
+        };
+
+        // ============ VARIABLES ============
         let currentLanguage = localStorage.getItem('language') || 'en';
         let currentTheme = localStorage.getItem('theme') || 'light';
+        let currentGalleryIndex = 0;
+        let currentGalleryImages = [];
 
-        // Fetch projects data
-        fetch('projects-data.json')
-            .then(response => response.json())
-            .then(data => {
-                projectsData = data;
-                renderProjects();
-                renderSkills();
-                renderExperience();
-                renderContactPreview();
-            });
-
-        // Theme Toggle
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            localStorage.setItem('theme', currentTheme);
-            document.documentElement.classList.toggle('dark-mode');
+        // ============ INITIALIZATION ============
+        function init() {
+            // Set theme
+            if (currentTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
             updateThemeButton();
-        });
 
-        // Language Toggle
-        document.getElementById('langToggle').addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-            localStorage.setItem('language', currentLanguage);
+            // Set language
             document.documentElement.lang = currentLanguage;
             document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
             updateLanguage();
-        });
 
-        // Initialize theme
-        if (currentTheme === 'dark') {
-            document.documentElement.classList.add('dark-mode');
+            // Render content
+            renderProjects();
+            renderSkills();
+            renderExperience();
+            renderContactPreview();
+
+            // Setup event listeners
+            setupEventListeners();
         }
 
-        // Initialize language
-        document.documentElement.lang = currentLanguage;
-        document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
-
+        // ============ THEME & LANGUAGE ============
         function updateThemeButton() {
             document.getElementById('themeToggle').textContent = currentTheme === 'light' ? '🌙' : '☀️';
         }
@@ -1050,58 +1170,88 @@
             });
         }
 
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+            document.documentElement.classList.toggle('dark-mode');
+            updateThemeButton();
+        });
+
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            document.documentElement.lang = currentLanguage;
+            document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+            updateLanguage();
+            renderProjects();
+            renderSkills();
+            renderExperience();
+        });
+
+        // ============ RENDERING ============
         function renderProjects() {
             const grid = document.getElementById('projectsGrid');
-            grid.innerHTML = projectsData.projects.map((project, index) => `
-                <div class="project-card">
-                    <div class="project-logo">
-                        <img src="images/logo/${project.logo}" alt="${project.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23d4af37%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2224%22 fill=%22%23000%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${project.name}%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <div class="project-content">
-                        <h3>${project.name}</h3>
-                        <p>${currentLanguage === 'en' ? project.descriptionEn : project.descriptionAr}</p>
-                        <div class="tech-tags">
-                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            grid.innerHTML = projectsData.projects.map((project, index) => {
+                const projectName = currentLanguage === 'en' ? project.nameEn : project.nameAr;
+                const projectDesc = currentLanguage === 'en' ? project.descriptionEn : project.descriptionAr;
+                
+                return `
+                    <div class="project-card">
+                        <div class="project-logo">
+                            <img src="${project.logo}" alt="${projectName}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23d4af37%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2224%22 fill=%22%23000%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${projectName}%3C/text%3E%3C/svg%3E'">
                         </div>
-                        <div class="project-buttons">
-                            <button onclick="openGallery(${index})" data-en="View Gallery" data-ar="عرض المعرض">View Gallery</button>
-                            ${project.playStoreUrl ? `<a href="${project.playStoreUrl}" target="_blank" data-en="Play Store" data-ar="متجر التطبيقات">Play Store</a>` : ''}
-                            ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" data-en="Website" data-ar="الموقع">Website</a>` : ''}
+                        <div class="project-content">
+                            <h3>${projectName}</h3>
+                            <p>${projectDesc}</p>
+                            <div class="tech-tags">
+                                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
+                            <div class="project-buttons">
+                                <button onclick="openGallery(${index})" data-en="View Gallery" data-ar="عرض المعرض">View Gallery</button>
+                                ${project.playStoreUrl ? `<a href="${project.playStoreUrl}" target="_blank" data-en="Play Store" data-ar="متجر التطبيقات">Play Store</a>` : ''}
+                                ${project.websiteUrl ? `<a href="${project.websiteUrl}" target="_blank" data-en="Website" data-ar="الموقع">Website</a>` : ''}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
             updateLanguage();
         }
 
         function renderSkills() {
             const container = document.getElementById('skillsContainer');
-            container.innerHTML = projectsData.skills.map(category => `
-                <div class="skill-category">
-                    <h3>${currentLanguage === 'en' ? category.categoryEn : category.categoryAr}</h3>
-                    <div class="skill-list">
-                        ${category.skills.map(skill => `<span class="skill-item">${skill}</span>`).join('')}
+            container.innerHTML = projectsData.skills.map(category => {
+                const categoryName = currentLanguage === 'en' ? category.categoryEn : category.categoryAr;
+                return `
+                    <div class="skill-category">
+                        <h3>${categoryName}</h3>
+                        <div class="skill-list">
+                            ${category.skills.map(skill => `<span class="skill-item">${skill}</span>`).join('')}
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function renderExperience() {
             const container = document.getElementById('timelineContainer');
-            container.innerHTML = projectsData.experience.map(exp => `
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>${exp.position}</h3>
-                        <p class="company">${exp.company}</p>
-                        <p class="period">${exp.period}</p>
-                        <p>${currentLanguage === 'en' ? exp.descriptionEn : exp.descriptionAr}</p>
-                        <div class="tech-tags">
-                            ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            container.innerHTML = projectsData.experience.map(exp => {
+                const description = currentLanguage === 'en' ? exp.descriptionEn : exp.descriptionAr;
+                return `
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>${exp.position}</h3>
+                            <p class="company">${exp.company}</p>
+                            <p class="period">${exp.period}</p>
+                            <p>${description}</p>
+                            <div class="tech-tags">
+                                ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function renderContactPreview() {
@@ -1125,16 +1275,14 @@
             `;
         }
 
-        // Gallery Functions
-        let currentGalleryIndex = 0;
-        let currentGalleryImages = [];
-
+        // ============ GALLERY FUNCTIONS ============
         function openGallery(projectIndex) {
             const project = projectsData.projects[projectIndex];
+            const projectName = currentLanguage === 'en' ? project.nameEn : project.nameAr;
             currentGalleryImages = project.images || [];
             currentGalleryIndex = 0;
 
-            document.getElementById('galleryTitle').textContent = project.name;
+            document.getElementById('galleryTitle').textContent = projectName;
             document.getElementById('galleryModal').classList.add('active');
             renderGallery();
         }
@@ -1174,86 +1322,83 @@
             document.getElementById('lightboxCounter').textContent = `${currentGalleryIndex + 1} / ${currentGalleryImages.length}`;
         }
 
-        // Event Listeners
-        document.getElementById('galleryClose').addEventListener('click', () => {
-            document.getElementById('galleryModal').classList.remove('active');
-        });
+        // ============ EVENT LISTENERS ============
+        function setupEventListeners() {
+            document.getElementById('galleryClose').addEventListener('click', () => {
+                document.getElementById('galleryModal').classList.remove('active');
+            });
 
-        document.getElementById('lightboxClose').addEventListener('click', () => {
-            document.getElementById('lightbox').classList.remove('active');
-        });
+            document.getElementById('lightboxClose').addEventListener('click', () => {
+                document.getElementById('lightbox').classList.remove('active');
+            });
 
-        document.getElementById('galleryPrev').addEventListener('click', () => {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-            renderGallery();
-        });
+            document.getElementById('galleryPrev').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                renderGallery();
+            });
 
-        document.getElementById('galleryNext').addEventListener('click', () => {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
-            renderGallery();
-        });
+            document.getElementById('galleryNext').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
+                renderGallery();
+            });
 
-        document.getElementById('lightboxPrev').addEventListener('click', () => {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-            updateLightbox();
-        });
+            document.getElementById('lightboxPrev').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                updateLightbox();
+            });
 
-        document.getElementById('lightboxNext').addEventListener('click', () => {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
-            updateLightbox();
-        });
+            document.getElementById('lightboxNext').addEventListener('click', () => {
+                currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
+                updateLightbox();
+            });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (document.getElementById('lightbox').classList.contains('active')) {
-                if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
-                if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
-                if (e.key === 'Escape') document.getElementById('lightboxClose').click();
-            }
-        });
+            document.addEventListener('keydown', (e) => {
+                if (document.getElementById('lightbox').classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+                    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+                    if (e.key === 'Escape') document.getElementById('lightboxClose').click();
+                }
+            });
 
-        // Contact Page
-        document.getElementById('contactPageBtn').addEventListener('click', () => {
-            document.getElementById('contactPage').classList.add('active');
-        });
+            document.getElementById('contactPageBtn').addEventListener('click', () => {
+                document.getElementById('contactPage').classList.add('active');
+            });
 
-        document.getElementById('contactClose').addEventListener('click', () => {
-            document.getElementById('contactPage').classList.remove('active');
-        });
-
-        document.getElementById('contactPage').addEventListener('click', (e) => {
-            if (e.target.id === 'contactPage') {
+            document.getElementById('contactClose').addEventListener('click', () => {
                 document.getElementById('contactPage').classList.remove('active');
-            }
-        });
+            });
 
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const message = document.getElementById('contactMessage').value;
+            document.getElementById('contactPage').addEventListener('click', (e) => {
+                if (e.target.id === 'contactPage') {
+                    document.getElementById('contactPage').classList.remove('active');
+                }
+            });
 
-            const whatsappMessage = `Hello! My name is ${name}.\nEmail: ${email}\n\nMessage:\n${message}`;
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            window.open(`https://wa.me/963988450079?text=${encodedMessage}`, '_blank');
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const message = document.getElementById('contactMessage').value;
 
-            document.getElementById('contactForm').reset();
-            document.getElementById('contactPage').classList.remove('active');
-        });
+                const whatsappMessage = `Hello! My name is ${name}.\nEmail: ${email}\n\nMessage:\n${message}`;
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                window.open(`https://wa.me/963988450079?text=${encodedMessage}`, '_blank');
 
-        // Scroll to sections
-        document.getElementById('viewWorkBtn').addEventListener('click', () => {
-            document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-        });
+                document.getElementById('contactForm').reset();
+                document.getElementById('contactPage').classList.remove('active');
+            });
 
-        document.getElementById('getInTouchBtn').addEventListener('click', () => {
-            document.getElementById('contactPreview').scrollIntoView({ behavior: 'smooth' });
-        });
+            document.getElementById('viewWorkBtn').addEventListener('click', () => {
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            });
 
-        // Initialize
-        updateThemeButton();
-        updateLanguage();
+            document.getElementById('getInTouchBtn').addEventListener('click', () => {
+                document.getElementById('contactPreview').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // ============ START ============
+        init();
     </script>
 </body>
 </html>
