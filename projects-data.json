@@ -6,12 +6,12 @@
       "nameAr": "شلة",
       "descriptionEn": "A comprehensive food delivery mobile application with real-time order tracking, multiple payment methods, and driver management system.",
       "descriptionAr": "تطبيق توصيل طعام شامل مع تتبع الطلبات في الوقت الفعلي وطرق دفع متعددة ونظام إدارة السائقين.",
-      "logo": "/images/logo/Shella.png",
+      "logo": "images/logo/Shella.png",
       "technologies": ["Flutter", "Firebase", "GetX", "Dart", "Google Maps API"],
       "images": [
-        "/images/shella/1.jpg",
-        "/images/shella/2.jpg",
-        "/images/shella/3.jpg"
+        "images/shella/1.jpg",
+        "images/shella/2.jpg",
+        "images/shella/3.jpg"
       ],
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.food.shala&pcampaignid=web_share",
       "websiteUrl": "",
@@ -24,12 +24,12 @@
       "nameAr": "سهلها",
       "descriptionEn": "A multi-app e-commerce ecosystem consisting of customer app, store manager app, delivery driver app, and admin dashboard.",
       "descriptionAr": "نظام تجارة إلكترونية متعدد التطبيقات يتضمن تطبيق العميل وتطبيق مدير المتجر وتطبيق السائق ولوحة التحكم.",
-      "logo": "/images/logo/sahlha.png",
+      "logo": "images/logo/sahlha.png",
       "technologies": ["Flutter", "Firebase", "GetX", "Dart", "REST API", "MySQL"],
       "images": [
-        "/images/sahlha/1.jpg",
-        "/images/sahlha/2.jpg",
-        "/images/sahlha/3.jpg"
+        "images/sahlha/1.jpg",
+        "images/sahlha/2.jpg",
+        "images/sahlha/3.jpg"
       ],
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.SahlhaStore.SahlhaStore&pcampaignid=web_share",
       "websiteUrl": "",
@@ -42,18 +42,18 @@
       "nameAr": "ماهر ستور",
       "descriptionEn": "An advanced accounting system connecting warehouse with multiple point-of-sale terminals, supporting offline mode with automatic synchronization.",
       "descriptionAr": "نظام محاسبة متقدم يربط المستودع مع نقاط البيع المتعددة مع دعم الوضع غير المتصل والمزامنة التلقائية.",
-      "logo": "/images/logo/maher_store.jpg",
+      "logo": "images/logo/maher_store.jpg",
       "technologies": ["Flutter", "SQLite", "GetX", "Dart", "Local Database", "REST API"],
       "images": [
-        "/images/maher-store/1 (1).png",
-        "/images/maher-store/1 (2).png",
-        "/images/maher-store/1 (3).png",
-        "/images/maher-store/1 (4).png",
-        "/images/maher-store/1 (5).png",
-        "/images/maher-store/1 (6).png",
-        "/images/maher-store/1 (7).png",
-        "/images/maher-store/1 (8).png",
-        "/images/maher-store/1 (9).png"
+        "images/maher-store/1 (1).png",
+        "images/maher-store/1 (2).png",
+        "images/maher-store/1 (3).png",
+        "images/maher-store/1 (4).png",
+        "images/maher-store/1 (5).png",
+        "images/maher-store/1 (6).png",
+        "images/maher-store/1 (7).png",
+        "images/maher-store/1 (8).png",
+        "images/maher-store/1 (9).png"
       ],
       "playStoreUrl": "",
       "websiteUrl": "",
@@ -66,12 +66,12 @@
       "nameAr": "ألفا جي بي سي",
       "descriptionEn": "A professional website for a technology and logistics solutions company, showcasing services and portfolio.",
       "descriptionAr": "موقع احترافي لشركة متخصصة في الحلول التقنية واللوجستية.",
-      "logo": "/images/logo/Alpha_GBC.png",
+      "logo": "images/logo/Alpha_GBC.png",
       "technologies": ["React", "PHP", "MySQL", "REST API"],
       "images": [
-        "/images/alpha-gbc/1.jpg",
-        "/images/alpha-gbc/2.jpg",
-        "/images/alpha-gbc/3.jpg"
+        "images/alpha-gbc/1.jpg",
+        "images/alpha-gbc/2.jpg",
+        "images/alpha-gbc/3.jpg"
       ],
       "playStoreUrl": "",
       "websiteUrl": "https://alphagbc.com",
