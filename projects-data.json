@@ -83,51 +83,45 @@
     {
       "category": "Mobile Development",
       "categoryAr": "تطوير الموبايل",
-      "items": ["Dart", "Flutter", "GetX", "Firebase", "SQLite", "GeoTracking", "NotificationCallback"]
+      "categoryEn": "Mobile Development",
+      "skills": ["Dart", "Flutter", "GetX", "Firebase", "SQLite", "GeoTracking", "NotificationCallback", "PHP", "MySQL", "RESTful APIs"]
     },
     {
       "category": "Web Development",
       "categoryAr": "تطوير الويب",
-      "items": ["PHP", "MySQL", "RESTful APIs"]
+      "categoryEn": "Web Development",
+      "skills": ["Dart", "Flutter", "PHP", "MySQL", "RESTful APIs"]
     },
     {
       "category": "Tools & Version Control",
       "categoryAr": "الأدوات والتحكم بالإصدارات",
-      "items": ["Git", "GitHub"]
+      "categoryEn": "Tools & Version Control",
+      "skills": ["Git", "GitHub"]
     }
   ],
   "experience": [
     {
-      "titleEn": "Freelance Developer",
-      "titleAr": "مطور مستقل",
-      "companyEn": "Self-Employed",
-      "companyAr": "العمل الحر",
+      "position": "Freelance Developer",
+      "company": "Self-Employed",
+      "period": "2021 - Present",
       "descriptionEn": "Developed multiple full-stack applications including Sahlha Store, Maher Store, and Alpha GBC website",
       "descriptionAr": "تطوير عدة تطبيقات متكاملة بما فيها متجر سهلها ونظام ماهر وموقع ألفا جي بي سي",
-      "startDate": "2021",
-      "endDate": "Present",
       "technologies": ["Flutter", "React", "Firebase", "MySQL"]
     },
     {
-      "titleEn": "Technical Lead",
-      "titleAr": "قائد فني",
-      "companyEn": "Alpha GBC",
-      "companyAr": "ألفا جي بي سي",
+      "position": "Technical Lead",
+      "company": "Alpha GBC",
+      "period": "2022 - 2024",
       "descriptionEn": "Led development team for multiple projects, architected scalable solutions",
       "descriptionAr": "قيادة فريق التطوير لعدة مشاريع، تصميم حلول قابلة للتوسع",
-      "startDate": "2022",
-      "endDate": "2024",
       "technologies": ["Flutter", "React", "PHP", "MySQL"]
     },
     {
-      "titleEn": "Mobile Developer",
-      "titleAr": "مطور تطبيقات موبايل",
-      "companyEn": "Portal Logic",
-      "companyAr": "بورتال لوجك",
+      "position": "Mobile Developer",
+      "company": "Portal Logic",
+      "period": "2020 - 2022",
       "descriptionEn": "Developed and maintained multiple Flutter applications for various clients",
       "descriptionAr": "تطوير والحفاظ على عدة تطبيقات Flutter لعملاء مختلفين",
-      "startDate": "2020",
-      "endDate": "2022",
       "technologies": ["Flutter", "Firebase", "GetX"]
     }
   ]
