@@ -1,0 +1,142 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "nameEn": "Shella - Food Delivery App",
+      "nameAr": "تطبيق شلة - توصيل الطعام",
+      "descriptionEn": "A comprehensive food delivery mobile application with real-time order tracking, multiple payment methods, and driver management system.",
+      "descriptionAr": "تطبيق توصيل طعام شامل مع تتبع الطلبات في الوقت الفعلي وطرق دفع متعددة ونظام إدارة السائقين.",
+      "technologies": ["Flutter", "Firebase", "GetX", "Dart", "Google Maps API"],
+      "images": [
+        "images/Shella app/Login.png",
+        "images/Shella app/home services.png",
+        "images/Shella app/Hyper Shella items.png",
+        "images/Shella app/Add to cart page.png",
+        "images/Shella app/cart page.png",
+        "images/Shella app/confirmation order.png"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.food.shala&pcampaignid=web_share",
+      "websiteUrl": "https://shella-restaurant.com",
+      "challengesEn": "Real-time location tracking, payment gateway integration, complex state management",
+      "challengesAr": "تتبع الموقع في الوقت الفعلي، تكامل بوابة الدفع، إدارة الحالة المعقدة"
+    },
+    {
+      "id": 2,
+      "nameEn": "Sahlha Store - E-Commerce Platform",
+      "nameAr": "متجر سهلة - منصة التجارة الإلكترونية",
+      "descriptionEn": "A multi-app e-commerce ecosystem consisting of customer app, store manager app, delivery driver app, and admin dashboard.",
+      "descriptionAr": "نظام تجارة إلكترونية متعدد التطبيقات يتضمن تطبيق العميل وتطبيق مدير المتجر وتطبيق السائق ولوحة التحكم.",
+      "technologies": ["Flutter", "Firebase", "Riverpod", "Dart", "REST API", "MySQL"],
+      "images": [
+        "images/Shella app/Login.png",
+        "images/Shella app/home services.png",
+        "images/Shella app/Hyper Shella items.png",
+        "images/Shella app/Add to cart page.png",
+        "images/Shella app/cart page.png"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.SahlhaStore.SahlhaStore&pcampaignid=web_share",
+      "challengesEn": "Multi-app synchronization, role-based access control, inventory management",
+      "challengesAr": "مزامنة متعددة التطبيقات، التحكم في الوصول بناءً على الأدوار، إدارة المخزون"
+    },
+    {
+      "id": 3,
+      "nameEn": "Maher Store - Accounting System",
+      "nameAr": "متجر ماهر - نظام المحاسبة",
+      "descriptionEn": "An advanced accounting system connecting warehouse with multiple point-of-sale terminals, supporting offline mode with automatic synchronization.",
+      "descriptionAr": "نظام محاسبة متقدم يربط المستودع مع نقاط البيع المتعددة مع دعم الوضع غير المتصل والمزامنة التلقائية.",
+      "technologies": ["Flutter", "SQLite", "GetX", "Dart", "Local Database", "REST API"],
+      "images": [
+        "images/maher-store/1 (1).png",
+        "images/maher-store/1 (2).png",
+        "images/maher-store/1 (3).png",
+        "images/maher-store/1 (4).png",
+        "images/maher-store/1 (5).png",
+        "images/maher-store/1 (6).png",
+        "images/maher-store/1 (7).png",
+        "images/maher-store/1 (8).png",
+        "images/maher-store/1 (9).png"
+      ],
+      "challengesEn": "Offline-first architecture, data synchronization, complex financial calculations",
+      "challengesAr": "معمارية بدون اتصال أولاً، مزامنة البيانات، حسابات مالية معقدة"
+    },
+    {
+      "id": 4,
+      "nameEn": "Alpha GBC - Tech Solutions Website",
+      "nameAr": "ألفا جي بي سي - موقع الحلول التقنية",
+      "descriptionEn": "A professional website for a technology and logistics solutions company, showcasing services and portfolio.",
+      "descriptionAr": "موقع احترافي لشركة متخصصة في الحلول التقنية واللوجستية.",
+      "technologies": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Node.js"],
+      "images": [
+        "images/Alpha GBC/1 (5).jpeg",
+        "images/Alpha GBC/1 (6).jpeg",
+        "images/Alpha GBC/1 (7).jpeg",
+        "images/Alpha GBC/1 (8).jpeg"
+      ],
+      "websiteUrl": "https://alphagbc.com",
+      "challengesEn": "Responsive design, SEO optimization, performance tuning",
+      "challengesAr": "التصميم المتجاوب، تحسين محركات البحث، تحسين الأداء"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Mobile Development",
+      "categoryAr": "تطوير الموبايل",
+      "items": ["Flutter", "Dart", "GetX", "Riverpod", "Firebase", "Google Maps API"]
+    },
+    {
+      "category": "Web Development",
+      "categoryAr": "تطوير الويب",
+      "items": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Node.js", "Express"]
+    },
+    {
+      "category": "Backend & Database",
+      "categoryAr": "Backend وقاعدة البيانات",
+      "items": ["MySQL", "SQLite", "Firebase Firestore", "REST APIs", "GraphQL"]
+    },
+    {
+      "category": "Architecture & Patterns",
+      "categoryAr": "المعمارية والأنماط",
+      "items": ["Clean Architecture", "MVVM", "MVC", "State Management", "Design Patterns"]
+    },
+    {
+      "category": "Tools & DevOps",
+      "categoryAr": "الأدوات و DevOps",
+      "items": ["Git", "GitHub", "CI/CD", "Docker", "Firebase Deployment"]
+    }
+  ],
+  "experience": [
+    {
+      "titleEn": "Freelance Developer",
+      "titleAr": "مطور مستقل",
+      "companyEn": "Self-Employed",
+      "companyAr": "العمل الحر",
+      "descriptionEn": "Developed multiple full-stack applications including Sahlha Store, Maher Store, and Alpha GBC website",
+      "descriptionAr": "تطوير عدة تطبيقات متكاملة بما فيها متجر سهلة ونظام ماهر وموقع ألفا جي بي سي",
+      "startDate": "2021-01",
+      "endDate": "present",
+      "technologies": ["Flutter", "React", "Firebase", "MySQL"]
+    },
+    {
+      "titleEn": "Lead Developer",
+      "titleAr": "مطور رئيسي",
+      "companyEn": "Alpha GBC",
+      "companyAr": "ألفا جي بي سي",
+      "descriptionEn": "Led development team for multiple projects, architected scalable solutions",
+      "descriptionAr": "قيادة فريق التطوير لعدة مشاريع، تصميم حلول قابلة للتوسع",
+      "startDate": "2022-06",
+      "endDate": "2024-12",
+      "technologies": ["Flutter", "React", "Node.js", "MySQL"]
+    },
+    {
+      "titleEn": "Mobile Developer",
+      "titleAr": "مطور تطبيقات موبايل",
+      "companyEn": "Portal Logic",
+      "companyAr": "بورتال لوجك",
+      "descriptionEn": "Developed and maintained multiple Flutter applications for various clients",
+      "descriptionAr": "تطوير والحفاظ على عدة تطبيقات Flutter لعملاء مختلفين",
+      "startDate": "2020-03",
+      "endDate": "2022-05",
+      "technologies": ["Flutter", "Firebase", "GetX"]
+    }
+  ]
+}
