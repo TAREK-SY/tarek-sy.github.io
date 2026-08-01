@@ -1,29 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found | Tarek Nassan</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#fafaf9" />
+
     <script>
-        // GitHub Pages SPA routing fix
-        // This file handles 404 errors for single-page applications
-        // by redirecting to index.html with the original path preserved
-        
-        (function() {
-            // Get the path that was requested
-            var path = window.location.pathname;
-            var search = window.location.search;
-            var hash = window.location.hash;
-            
-            // Store the path in sessionStorage
-            sessionStorage.redirect = path + search + hash;
-            
-            // Redirect to index.html
-            window.location.href = '/index.html';
-        })();
+      (function () {
+        var d = document.documentElement;
+        try {
+          var theme = localStorage.getItem("tn.theme");
+          if (theme !== "light" && theme !== "dark") {
+            theme = matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          d.dataset.theme = theme;
+        } catch (e) {
+          d.dataset.theme = "light";
+        }
+      })();
     </script>
-</head>
-<body>
-    <p>Redirecting...</p>
-</body>
+
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+
+  <body>
+    <main class="shell state" style="min-height: 100dvh; display: grid; align-content: center">
+      <h2>Page not found</h2>
+      <p>That address does not exist on this site.</p>
+      <p><a class="btn btn-primary" href="/">Back to the home page</a></p>
+    </main>
+  </body>
 </html>

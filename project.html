@@ -4,27 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tarek Nassan | Flutter and Web Developer</title>
-    <meta
-      name="description"
-      content="Flutter and web developer. Five years building delivery platforms, commerce systems, and offline-first point-of-sale software."
-    />
+    <title>Project | Tarek Nassan</title>
+    <meta name="description" content="Project case study." />
     <meta name="theme-color" content="#fafaf9" />
-    <link rel="canonical" href="https://tarek-sy.github.io/" />
+    <meta name="robots" content="index, follow" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tarek Nassan | Flutter and Web Developer" />
-    <meta
-      property="og:description"
-      content="Five years building delivery platforms, commerce systems, and offline-first point-of-sale software."
-    />
-    <meta property="og:url" content="https://tarek-sy.github.io/" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!--
-      Theme and direction are resolved before first paint so the page never
-      flashes the wrong theme or the wrong reading direction.
-    -->
     <script>
       (function () {
         var d = document.documentElement;
@@ -70,13 +54,7 @@
     <header class="nav">
       <div class="shell nav-inner">
         <a class="nav-brand" href="index.html" data-nav-brand>Tarek Nassan</a>
-        <nav class="nav-links" id="nav-links" aria-label="Sections">
-          <a href="#work" data-nav-work>Work</a>
-          <a href="#skills" data-nav-skills>Skills</a>
-          <a href="#experience" data-nav-experience>Experience</a>
-          <a href="#contact" data-nav-contact>Get in touch</a>
-        </nav>
-        <div class="nav-tools">
+        <div class="nav-tools" style="margin-inline-start: auto">
           <button
             class="icon-btn lang-btn"
             type="button"
@@ -91,43 +69,39 @@
             data-theme-toggle
             aria-label="Switch theme"
           ></button>
-          <button
-            class="icon-btn nav-toggle"
-            type="button"
-            data-menu-toggle
-            aria-expanded="false"
-            aria-controls="nav-links"
-            aria-label="Menu"
-          ></button>
         </div>
       </div>
     </header>
 
     <main id="app">
-      <!-- Skeleton matching the hero and first work row while data loads. -->
-      <div class="hero shell">
-        <div class="hero-grid">
-          <div><div class="skeleton" style="height: 11rem"></div></div>
-          <div class="skeleton" style="aspect-ratio: 4 / 3"></div>
-        </div>
-      </div>
-      <div class="shell work-skeleton">
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
+      <div class="shell case-head">
+        <div class="skeleton" style="height: 3rem; max-width: 20rem"></div>
+        <div class="skeleton" style="height: 8rem; margin-block-start: 2rem"></div>
       </div>
     </main>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+      <div class="lightbox-bar">
+        <span class="mono" data-counter></span>
+        <button class="icon-btn" type="button" data-close aria-label="Close"></button>
+      </div>
+      <div class="lightbox-stage" data-stage></div>
+      <div class="lightbox-nav">
+        <button class="icon-btn" type="button" data-prev aria-label="Previous"></button>
+        <button class="icon-btn" type="button" data-next aria-label="Next"></button>
+      </div>
+    </dialog>
 
     <noscript>
       <div class="shell state">
         <h2>This page needs JavaScript</h2>
         <p>
-          Project content is loaded from a data file. You can still reach me at
-          <a href="mailto:tareknassan2015@gmail.com">tareknassan2015@gmail.com</a>
-          or on <a href="https://wa.me/963988450079">WhatsApp</a>.
+          Case study content is loaded from a data file.
+          <a href="index.html">Return to the home page</a>.
         </p>
       </div>
     </noscript>
 
-    <script type="module" src="assets/js/home.js"></script>
+    <script type="module" src="assets/js/case.js"></script>
   </body>
 </html>

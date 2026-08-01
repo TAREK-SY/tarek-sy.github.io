@@ -1,0 +1,1029 @@
+/* ==========================================================================
+   Layout and components.
+   Every inline-direction value uses logical properties so that flipping
+   dir="rtl" needs no separate stylesheet.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Navigation. One line at desktop, 68px tall.
+   -------------------------------------------------------------------------- */
+
+.nav {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-block-end: 1px solid transparent;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.nav[data-stuck="true"] {
+  border-block-end-color: var(--line);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .nav {
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  min-height: var(--nav-h);
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  margin-inline-start: auto;
+  font-size: var(--fs-sm);
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--text-muted);
+  background: var(--bg-raised);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.icon-btn:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.icon-btn:active {
+  transform: scale(0.96);
+}
+
+.lang-btn {
+  width: auto;
+  padding-inline: var(--s-3);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Below the desktop breakpoint the section links move into a disclosure panel
+   rather than disappearing. */
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 47.99rem) {
+  .nav-toggle {
+    display: grid;
+  }
+
+  .nav-tools {
+    margin-inline-start: auto;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-inline-start: 0;
+    padding: 0 var(--gutter) var(--s-3);
+    background: var(--bg-raised);
+    border-block-end: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    font-size: var(--fs-body);
+  }
+
+  .nav[data-menu="open"] .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding-block: var(--s-3);
+    color: var(--text);
+  }
+
+  .nav-links a + a {
+    border-block-start: 1px solid var(--line);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Buttons. Labels stay on one line; primary text is always readable.
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 0.6875rem var(--s-5);
+  border-radius: var(--r-control);
+  border: 1px solid transparent;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-ghost {
+  border-color: var(--line-strong);
+  color: var(--text);
+  background: var(--bg-raised);
+}
+
+.btn-ghost:hover {
+  border-color: var(--text-faint);
+}
+
+.btn .icon {
+  width: 1.05em;
+  height: 1.05em;
+}
+
+/* Text link that carries an arrow. */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-block-size: 1.5rem; /* WCAG 2.2 target size */
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link-arrow .icon {
+  width: 1.05em;
+  height: 1.05em;
+  transition: transform var(--dur) var(--ease);
+}
+
+.link-arrow:hover .icon {
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .link-arrow:hover .icon {
+  transform: translateX(-3px);
+}
+
+html[dir="rtl"] .link-arrow .icon[data-flip] {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .link-arrow:hover .icon[data-flip] {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Hero. Asymmetric split: copy 7 / media 5. Never centred.
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(3rem, 1rem + 6vw, 6rem) clamp(4rem, 2rem + 6vw, 7rem);
+}
+
+.hero-grid {
+  display: grid;
+  gap: clamp(2.5rem, 1rem + 5vw, 5rem);
+  align-items: center;
+}
+
+@media (min-width: 60rem) {
+  .hero-grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.hero h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.035em;
+  max-width: 20ch;
+}
+
+html[lang="ar"] .hero h1 {
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.hero-sub {
+  margin-block-start: var(--s-5);
+  max-width: 46ch;
+  font-size: var(--fs-lead);
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-block-start: var(--s-6);
+}
+
+.hero-social {
+  display: flex;
+  gap: var(--s-2);
+  margin-block-start: var(--s-6);
+}
+
+.hero-social a {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--text-muted);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+.hero-social a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Real product screenshots, offset. No device chrome, no fake UI. */
+.hero-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.hero-media img {
+  width: 100%;
+  border-radius: var(--r-surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-media img:first-child {
+  margin-block-start: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+@media (max-width: 59.99rem) {
+  .hero-media {
+    max-width: 26rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Selected work. Hairline-separated rows, media and copy in a fixed
+   orientation. Deliberately not a zigzag and deliberately not cards.
+   -------------------------------------------------------------------------- */
+
+.work-list {
+  display: grid;
+}
+
+.work-item {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  border-block-start: 1px solid var(--line);
+}
+
+.work-item:first-child {
+  border-block-start: none;
+  padding-block-start: 0;
+}
+
+@media (min-width: 56rem) {
+  .work-item {
+    grid-template-columns: 5fr 6fr;
+    align-items: center;
+  }
+}
+
+.work-media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  border-radius: var(--r-surface);
+  text-decoration: none;
+}
+
+.work-media img {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--r-surface);
+  border: 1px solid var(--line);
+  transition: transform var(--dur) var(--ease);
+}
+
+.work-item:hover .work-media img {
+  transform: translateY(-4px);
+}
+
+.work-media img:nth-child(2) {
+  transition-delay: 40ms;
+}
+
+.work-media img:nth-child(3) {
+  transition-delay: 80ms;
+}
+
+/* Alpha GBC screenshots are landscape web captures, not phone portraits. */
+.work-media[data-orientation="landscape"] {
+  grid-template-columns: 1fr;
+}
+
+.work-media[data-orientation="landscape"] img {
+  aspect-ratio: 16 / 10;
+  object-position: top left;
+}
+
+.work-media[data-orientation="landscape"] img:nth-child(n + 3) {
+  display: none;
+}
+
+.work-kind {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.work-body h3 {
+  margin-block-start: var(--s-2);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.03em;
+}
+
+.work-body h3 a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur) var(--ease);
+}
+
+html[dir="rtl"] .work-body h3 a {
+  background-position: 100% 100%;
+}
+
+.work-body h3 a:hover {
+  background-size: 100% 1.5px;
+}
+
+.work-summary {
+  margin-block-start: var(--s-4);
+  max-width: var(--measure);
+  color: var(--text-muted);
+}
+
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin-block-start: var(--s-5);
+}
+
+/* --------------------------------------------------------------------------
+   Technology chips
+   -------------------------------------------------------------------------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-block-start: var(--s-5);
+}
+
+.chip {
+  padding: 0.25rem var(--s-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  background: var(--bg-raised);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Skills. Grouped columns divided by hairlines. No cards.
+   -------------------------------------------------------------------------- */
+
+.skills-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-group {
+  padding: var(--s-5) 0;
+  border-block-start: 1px solid var(--line);
+}
+
+@media (min-width: 40rem) {
+  .skill-group {
+    padding-inline-end: var(--s-6);
+  }
+}
+
+.skill-group h3 {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.skill-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+  margin-block-start: var(--s-3);
+  list-style: none;
+  padding: 0;
+}
+
+.skill-group li {
+  font-size: var(--fs-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Experience. Period in a fixed lead column, detail beside it.
+   -------------------------------------------------------------------------- */
+
+.exp-list {
+  display: grid;
+}
+
+.exp-item {
+  display: grid;
+  gap: var(--s-2) var(--s-7);
+  padding-block: var(--s-6);
+  border-block-start: 1px solid var(--line);
+}
+
+@media (min-width: 48rem) {
+  .exp-item {
+    grid-template-columns: 11rem 1fr;
+  }
+}
+
+.exp-period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.exp-item h3 {
+  font-size: var(--fs-h3);
+}
+
+.exp-company {
+  margin-block-start: var(--s-1);
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
+
+.exp-item p {
+  margin-block-start: var(--s-3);
+  max-width: var(--measure);
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Contact. A statement plus direct channels. No form: every channel here
+   reaches a real inbox without a third-party form relay.
+   -------------------------------------------------------------------------- */
+
+.contact-grid {
+  display: grid;
+  gap: clamp(2rem, 1rem + 4vw, 4rem);
+}
+
+@media (min-width: 56rem) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.contact-statement {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+}
+
+html[lang="ar"] .contact-statement {
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.channels {
+  display: grid;
+  list-style: none;
+  padding: 0;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding-block: var(--s-5);
+  border-block-start: 1px solid var(--line);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.channel:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+.channel:hover {
+  color: var(--accent);
+}
+
+.channel .icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--text-faint);
+}
+
+.channel:hover .icon {
+  color: var(--accent);
+}
+
+.channel-label {
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+.channel-value {
+  font-size: var(--fs-body);
+  font-weight: 500;
+}
+
+.channel-arrow {
+  margin-inline-start: auto;
+  color: var(--text-faint);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer {
+  padding-block: var(--s-6);
+  border-block-start: 1px solid var(--line);
+  color: var(--text-faint);
+  font-size: var(--fs-sm);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 1.5rem; /* WCAG 2.2 target size */
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Case study page
+   -------------------------------------------------------------------------- */
+
+.case-head {
+  padding-block: clamp(2.5rem, 1rem + 5vw, 5rem) clamp(2rem, 1rem + 3vw, 3.5rem);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+html[dir="rtl"] .back-link .icon {
+  transform: scaleX(-1);
+}
+
+.case-title {
+  margin-block-start: var(--s-5);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.035em;
+}
+
+html[lang="ar"] .case-title {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.case-lead {
+  margin-block-start: var(--s-5);
+  max-width: 52ch;
+  font-size: var(--fs-lead);
+  color: var(--text-muted);
+}
+
+.case-meta {
+  display: grid;
+  gap: var(--s-5);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  margin-block-start: var(--s-7);
+  padding-block-start: var(--s-6);
+  border-block-start: 1px solid var(--line);
+}
+
+.case-meta dt {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.case-meta dd {
+  margin: var(--s-2) 0 0;
+  font-size: var(--fs-sm);
+}
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-block-start: var(--s-6);
+}
+
+.case-section {
+  padding-block: clamp(2.5rem, 1rem + 4vw, 4.5rem);
+  border-block-start: 1px solid var(--line);
+}
+
+.case-section h2 {
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
+.case-points {
+  display: grid;
+  gap: var(--s-5);
+  margin-block-start: var(--s-5);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  list-style: none;
+  padding: 0;
+}
+
+.case-points li {
+  padding-inline-start: var(--s-4);
+  border-inline-start: 2px solid var(--accent);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}
+
+/* Gallery: a plain responsive grid, click to open the lightbox. */
+.gallery {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-block-start: var(--s-5);
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+}
+
+.gallery[data-orientation="landscape"] {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.gallery button {
+  padding: 0;
+  border-radius: var(--r-surface);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-sunken);
+  transition:
+    transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.gallery button:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.gallery[data-orientation="landscape"] img {
+  aspect-ratio: 16 / 10;
+  object-position: top left;
+}
+
+/* Next / previous project */
+.case-next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-block: var(--s-7);
+  border-block-start: 1px solid var(--line);
+}
+
+.case-next h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.03em;
+}
+
+.case-next h2 a {
+  text-decoration: none;
+}
+
+.case-next h2 a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox
+   -------------------------------------------------------------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: color-mix(in srgb, var(--n-950) 94%, transparent);
+  padding: var(--s-4);
+}
+
+.lightbox:not([open]) {
+  display: none;
+}
+
+.lightbox::backdrop {
+  background: transparent;
+}
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  color: var(--n-300);
+  font-size: var(--fs-sm);
+}
+
+.lightbox-bar .icon-btn {
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.2);
+  color: var(--n-200);
+}
+
+.lightbox-bar .icon-btn:hover {
+  color: var(--n-0);
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.lightbox-stage {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding-block: var(--s-4);
+}
+
+.lightbox-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--r-surface);
+}
+
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-4);
+}
+
+.lightbox-nav .icon-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.2);
+  color: var(--n-200);
+}
+
+.lightbox-nav .icon-btn:hover:not(:disabled) {
+  color: var(--n-0);
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.lightbox-nav .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+html[dir="rtl"] .lightbox-nav {
+  flex-direction: row-reverse;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal. Driven by IntersectionObserver, never a scroll listener.
+   Purpose: give the eye a sequence down a long single-column page.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity var(--dur-slow) var(--ease),
+      transform var(--dur-slow) var(--ease);
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Anything still hidden when scripting is unavailable must show. */
+.no-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Empty and error states
+   -------------------------------------------------------------------------- */
+
+.state {
+  padding-block: var(--s-9);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.state h2 {
+  font-size: var(--fs-h2);
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.state p {
+  margin-block-start: var(--s-4);
+  margin-inline: auto;
+  max-width: 40ch;
+}
+
+.state .btn {
+  margin-block-start: var(--s-6);
+}
+
+/* Skeleton placeholders match the shape of what is loading. */
+.skeleton {
+  border-radius: var(--r-surface);
+  background: linear-gradient(
+    90deg,
+    var(--bg-sunken) 25%,
+    var(--line) 37%,
+    var(--bg-sunken) 63%
+  );
+  background-size: 400% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skeleton {
+    animation: skeleton-shift 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes skeleton-shift {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.work-skeleton {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+@media (min-width: 56rem) {
+  .work-skeleton {
+    grid-template-columns: 5fr 6fr;
+    align-items: center;
+  }
+}
+
+.work-skeleton .skeleton:first-child {
+  aspect-ratio: 16 / 9;
+}
+
+.work-skeleton .skeleton:last-child {
+  height: 10rem;
+}

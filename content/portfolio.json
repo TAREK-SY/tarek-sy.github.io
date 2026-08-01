@@ -1,0 +1,191 @@
+{
+  "profile": {
+    "name": { "en": "Tarek Nassan", "ar": "طارق نسان" },
+    "role": { "en": "Flutter and Web Developer", "ar": "مطوّر Flutter وويب" },
+    "headline": {
+      "en": "Apps that hold up in production.",
+      "ar": "تطبيقات تصمد في بيئة الإنتاج."
+    },
+    "summary": {
+      "en": "Five years building delivery platforms, commerce systems, and offline-first point-of-sale software.",
+      "ar": "خمس سنوات في بناء منصات توصيل وأنظمة تجارة وبرمجيات نقاط بيع تعمل دون اتصال."
+    },
+    "email": "tareknassan2015@gmail.com",
+    "phone": "+963988450079",
+    "whatsapp": "963988450079",
+    "github": "https://github.com/TAREK-SY",
+    "linkedin": "",
+    "cv": ""
+  },
+
+  "projects": [
+    {
+      "slug": "shella",
+      "featured": true,
+      "name": { "en": "Shella", "ar": "شلة" },
+      "kind": { "en": "Food delivery platform", "ar": "منصة توصيل طعام" },
+      "year": "",
+      "role": { "en": "", "ar": "" },
+      "summary": {
+        "en": "Food delivery app with live order tracking, multiple payment methods, and a driver dispatch system.",
+        "ar": "تطبيق توصيل طعام مع تتبّع مباشر للطلبات، وطرق دفع متعددة، ونظام إسناد للسائقين."
+      },
+      "tech": ["Flutter", "Dart", "Firebase", "GetX", "Google Maps API"],
+      "challenges": [
+        {
+          "en": "Live location tracking",
+          "ar": "تتبّع الموقع المباشر"
+        },
+        {
+          "en": "Payment gateway integration",
+          "ar": "تكامل بوابة الدفع"
+        },
+        {
+          "en": "State management across long-running order flows",
+          "ar": "إدارة الحالة عبر تدفقات طلب طويلة الأمد"
+        }
+      ],
+      "links": {
+        "playStore": "https://play.google.com/store/apps/details?id=com.food.shala",
+        "website": ""
+      }
+    },
+    {
+      "slug": "sahlha",
+      "featured": true,
+      "name": { "en": "Sahlha Store", "ar": "سهلها" },
+      "kind": { "en": "Commerce ecosystem", "ar": "نظام تجارة متكامل" },
+      "year": "",
+      "role": { "en": "", "ar": "" },
+      "summary": {
+        "en": "E-commerce platform built as four connected apps: customer, store manager, delivery driver, and admin dashboard.",
+        "ar": "منصة تجارة إلكترونية مبنية كأربعة تطبيقات مترابطة: العميل، ومدير المتجر، والسائق، ولوحة التحكم."
+      },
+      "tech": ["Flutter", "Dart", "Firebase", "GetX", "REST API", "MySQL"],
+      "challenges": [
+        {
+          "en": "Keeping four apps in sync on one data model",
+          "ar": "إبقاء أربعة تطبيقات متزامنة على نموذج بيانات واحد"
+        },
+        {
+          "en": "Role-based access control",
+          "ar": "التحكم بالوصول حسب الدور"
+        },
+        {
+          "en": "Inventory consistency under concurrent orders",
+          "ar": "اتساق المخزون تحت الطلبات المتزامنة"
+        }
+      ],
+      "links": {
+        "playStore": "https://play.google.com/store/apps/details?id=com.SahlhaStore.SahlhaStore",
+        "website": ""
+      }
+    },
+    {
+      "slug": "maher-store",
+      "featured": true,
+      "name": { "en": "Maher Store", "ar": "ماهر ستور" },
+      "kind": { "en": "Point-of-sale and accounting", "ar": "نقاط بيع ومحاسبة" },
+      "year": "",
+      "role": { "en": "", "ar": "" },
+      "summary": {
+        "en": "Accounting system linking a central warehouse to multiple point-of-sale terminals, built offline-first with automatic sync.",
+        "ar": "نظام محاسبة يربط مستودعاً مركزياً بعدة نقاط بيع، مبني ليعمل دون اتصال أولاً مع مزامنة تلقائية."
+      },
+      "tech": ["Flutter", "Dart", "SQLite", "GetX", "REST API"],
+      "challenges": [
+        {
+          "en": "Offline-first architecture",
+          "ar": "معمارية تعمل دون اتصال أولاً"
+        },
+        {
+          "en": "Conflict resolution during sync",
+          "ar": "حلّ التعارضات أثناء المزامنة"
+        },
+        {
+          "en": "Financial calculations that must reconcile exactly",
+          "ar": "حسابات مالية يجب أن تتطابق بدقة"
+        }
+      ],
+      "links": { "playStore": "", "website": "" }
+    },
+    {
+      "slug": "alpha-gbc",
+      "featured": true,
+      "name": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
+      "kind": { "en": "Corporate website", "ar": "موقع مؤسسي" },
+      "year": "",
+      "role": { "en": "", "ar": "" },
+      "summary": {
+        "en": "Corporate website for a technology and logistics company, covering services and delivered work.",
+        "ar": "موقع مؤسسي لشركة حلول تقنية ولوجستية، يعرض الخدمات والأعمال المنجزة."
+      },
+      "tech": ["React", "PHP", "MySQL", "REST API"],
+      "challenges": [
+        {
+          "en": "Responsive layout across a wide device range",
+          "ar": "تخطيط متجاوب عبر مدى واسع من الأجهزة"
+        },
+        { "en": "Search engine optimisation", "ar": "تحسين محركات البحث" },
+        { "en": "Load performance", "ar": "أداء التحميل" }
+      ],
+      "links": { "playStore": "", "website": "https://alphagbc.com" }
+    }
+  ],
+
+  "skills": [
+    {
+      "label": { "en": "Mobile", "ar": "الموبايل" },
+      "items": ["Flutter", "Dart", "GetX", "Material Design"]
+    },
+    {
+      "label": { "en": "Backend and data", "ar": "الخلفية والبيانات" },
+      "items": ["PHP", "MySQL", "Firebase", "SQLite", "REST APIs"]
+    },
+    {
+      "label": { "en": "Platform features", "ar": "ميزات المنصة" },
+      "items": ["Geolocation", "Push notifications", "Google Maps API", "Offline sync"]
+    },
+    {
+      "label": { "en": "Web", "ar": "الويب" },
+      "items": ["React", "HTML", "CSS", "JavaScript"]
+    },
+    {
+      "label": { "en": "Tooling", "ar": "الأدوات" },
+      "items": ["Git", "GitHub"]
+    }
+  ],
+
+  "experience": [
+    {
+      "period": "2021 - Present",
+      "position": { "en": "Freelance Developer", "ar": "مطوّر مستقل" },
+      "company": { "en": "Self-employed", "ar": "عمل حر" },
+      "description": {
+        "en": "Built and shipped Sahlha Store, Maher Store, and the Alpha GBC website end to end.",
+        "ar": "بناء وإطلاق سهلها وماهر ستور وموقع ألفا جي بي سي من البداية للنهاية."
+      },
+      "tech": ["Flutter", "React", "Firebase", "MySQL"]
+    },
+    {
+      "period": "2022 - 2024",
+      "position": { "en": "Technical Lead", "ar": "قائد تقني" },
+      "company": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
+      "description": {
+        "en": "Led the development team across multiple projects and set the architecture for scalable delivery.",
+        "ar": "قيادة فريق التطوير عبر عدة مشاريع، ووضع المعمارية اللازمة للتسليم القابل للتوسّع."
+      },
+      "tech": ["Flutter", "React", "PHP", "MySQL"]
+    },
+    {
+      "period": "2020 - 2022",
+      "position": { "en": "Mobile Developer", "ar": "مطوّر موبايل" },
+      "company": { "en": "Portal Logic", "ar": "بورتال لوجيك" },
+      "description": {
+        "en": "Built and maintained Flutter applications for a range of client briefs.",
+        "ar": "بناء وصيانة تطبيقات Flutter لمجموعة من متطلبات العملاء."
+      },
+      "tech": ["Flutter", "Firebase", "GetX"]
+    }
+  ]
+}

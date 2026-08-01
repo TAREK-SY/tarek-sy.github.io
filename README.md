@@ -1,86 +1,113 @@
-# Tarek Nassan - Portfolio Website
+# tarek-sy.github.io
 
-A professional portfolio website for Flutter and Web Developer showcasing projects, skills, and experience.
+Portfolio site for Tarek Nassan. Static HTML, CSS and JavaScript with no build
+step: what is in the repository is what GitHub Pages serves.
 
-## Features
+## Running it locally
 
-✨ **Multi-Language Support**
-- Arabic (العربية) with RTL support
-- English (English) with LTR support
-- Language switcher in the navigation bar
+ES modules and `fetch` need a real origin, so opening `index.html` from the
+filesystem will not work. Serve the folder instead:
 
-🌙 **Theme Support**
-- Dark Mode (default)
-- Light Mode
-- Theme switcher in the navigation bar
+```bash
+python -m http.server 8000
+```
 
-📱 **Responsive Design**
-- Mobile-friendly
-- Tablet-optimized
-- Desktop-optimized
+Then open <http://localhost:8000>.
 
-🚀 **Key Sections**
-- Hero section with call-to-action buttons
-- Featured projects showcase
-- Technical skills with proficiency levels
-- Professional experience timeline
-- Contact form with WhatsApp integration
-- Social media links
+## Layout
 
-## Projects Showcased
+```
+index.html            Home page shell
+project.html          Case study shell, addressed by ?p=<slug>
+404.html              Not found page
+content/
+  portfolio.json      All copy and project data, bilingual
+assets/
+  css/
+    fonts.css         Generated @font-face rules
+    base.css          Design tokens, reset, typography
+    site.css          Layout and components
+  js/
+    core.js           Theme, language, data loading, scroll reveal
+    home.js           Home page rendering
+    case.js           Case study rendering and lightbox
+  fonts/              Self-hosted woff2 subsets
+  icons/sprite.svg    Tabler Icons subset
+  media/              WebP screenshots plus manifest.json
+scripts/              Asset generators, see below
+```
 
-1. **Shella** - Multi-platform delivery and services app
-2. **Sahlha Store** - Complete e-commerce platform with multi-app ecosystem
-3. **Maher Store** - Accounting system with offline-first architecture
-4. **Alpha GBC** - Corporate website for logistics and tech solutions
+## Editing content
 
-## Technologies Used
+Everything visible on the site comes from `content/portfolio.json`. Nothing
+needs to be edited in HTML or JavaScript to change copy, add a project, or
+update contact details.
 
-### Frontend
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- i18next (Internationalization)
-- Lucide React (Icons)
+### Adding a project
 
-### Features
-- WhatsApp integration for contact form
-- Real-time form validation
-- Toast notifications
-- Smooth animations and transitions
+1. Put the screenshots in a folder and run the media script (see below) so they
+   land in `assets/media/<slug>/` and get registered in `manifest.json`.
+2. Append an object to the `projects` array in `content/portfolio.json`. The
+   `slug` must match the media folder name.
 
-## How to Use
+```jsonc
+{
+  "slug": "my-project",
+  "featured": true,
+  "name":    { "en": "My Project", "ar": "مشروعي" },
+  "kind":    { "en": "Mobile app", "ar": "تطبيق موبايل" },
+  "year":    "2025",
+  "role":    { "en": "Sole developer", "ar": "مطوّر منفرد" },
+  "summary": { "en": "One or two sentences.", "ar": "جملة أو جملتان." },
+  "tech":    ["Flutter", "Dart"],
+  "challenges": [
+    { "en": "The hard part", "ar": "الجزء الصعب" }
+  ],
+  "links": { "playStore": "", "website": "" }
+}
+```
 
-### Local Development
-1. Extract the files
-2. Open `index.html` in your browser
+Empty strings are omitted from the page rather than rendered blank, so it is
+safe to leave `year`, `role`, or either link unset.
 
-### Deploy to GitHub Pages
-1. Clone your repository
-2. Copy all files from this folder to your repository root
-3. Commit and push to GitHub
-4. Enable GitHub Pages in repository settings (select main branch)
+## Asset generators
 
-## Customization
+These run by hand when the inputs change. They are not part of deployment.
 
-To customize the portfolio:
+| Script                    | Purpose                                                      |
+| ------------------------- | ------------------------------------------------------------ |
+| `scripts/fetch-fonts.mjs` | Downloads Geist and IBM Plex Sans Arabic, writes `fonts.css` |
+| `scripts/fetch-icons.mjs` | Builds `assets/icons/sprite.svg` from Tabler Icons           |
+| `scripts/build-media.py`  | Converts source images to WebP and writes `manifest.json`    |
 
-1. **Edit Content**: Modify the text in `index.html`
-2. **Change Colors**: Update the CSS variables in the styles
-3. **Update Images**: Replace image URLs with your own
-4. **Add Projects**: Modify the projects data in the HTML
+```bash
+node scripts/fetch-fonts.mjs .
+node scripts/fetch-icons.mjs .
+python scripts/build-media.py .          # expects source images under images/
+```
+
+`build-media.py` reads from an `images/` folder laid out by project. That folder
+is not committed; point the script at your originals when adding screenshots.
+
+## Design notes
+
+- One accent colour, vermilion, used identically across every section.
+  `#C13D18` on light (5.19:1), `#FF7A55` on dark (7.6:1).
+- One corner radius system: 4px for controls, 6px for surfaces.
+- Theme is locked per page, follows `prefers-color-scheme`, and can be
+  overridden by the toggle. The choice persists in `localStorage`.
+- Arabic uses IBM Plex Sans Arabic with full RTL. Direction flips through CSS
+  logical properties, so there is no separate RTL stylesheet.
+- Motion is limited to transitions and one `IntersectionObserver` reveal. There
+  are no scroll event listeners, and everything collapses under
+  `prefers-reduced-motion: reduce`.
+
+## Deployment
+
+Push to `main`. GitHub Pages serves the repository root.
 
 ## Contact
 
-- **Email**: tareknassan2015@gmail.com
-- **WhatsApp**: +963 988 450 079
-- **GitHub**: https://github.com/tarek-sy
-- **LinkedIn**: https://linkedin.com/in/tarek-nassan
-
-## License
-
-© 2026 Tarek Nassan. All rights reserved.
-
----
-
-**Note**: This is a static website built with React. For the full source code with backend capabilities, visit the Manus project.
+- Email: tareknassan2015@gmail.com
+- WhatsApp: +963 988 450 079
+- GitHub: https://github.com/TAREK-SY
