@@ -168,13 +168,16 @@ function render(data, project) {
       <h2>${esc(s.screens)}</h2>
       <div class="gallery"${landscape ? ' data-orientation="landscape"' : ""}>
         ${gallery
-          .map(
-            (img, i) => `
-          <button type="button" data-index="${i}" aria-label="${esc(s.imageOf(i + 1, gallery.length))}">
+          .map((img, i) => {
+            const wide = img.w > img.h;
+            return `
+          <button type="button" data-index="${i}"${wide ? " data-wide" : ""}
+            style="aspect-ratio:${img.w}/${img.h}"
+            aria-label="${esc(s.imageOf(i + 1, gallery.length))}">
             <img src="${esc(img.thumb)}" width="${img.thumbW}" height="${img.thumbH}"
               alt="${esc(s.screenshotAlt(name, i + 1))}" loading="lazy" decoding="async">
-          </button>`,
-          )
+          </button>`;
+          })
           .join("")}
       </div>
     </section>`

@@ -173,6 +173,10 @@
         {
           "en": "Every assumption about the unbuilt backend is tagged in code and tracked in a written file.",
           "ar": "كل افتراض عن الخلفية غير المبنية موسوم في الكود ومُتتبَّع في ملف مكتوب."
+        },
+        {
+          "en": "One Arabic-first design system covers all three apps, phone and desktop, fully right to left.",
+          "ar": "نظام تصميم واحد عربي أولاً يغطي التطبيقات الثلاثة، هاتفاً وسطح مكتب، بدعم كامل لليمين إلى اليسار."
         }
       ],
       "links": { "playStore": "", "website": "" }

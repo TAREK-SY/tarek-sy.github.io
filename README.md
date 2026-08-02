@@ -99,6 +99,18 @@ python scripts/build-media.py .          # expects source images under images/
 `build-media.py` reads from an `images/` folder laid out by project. That folder
 is not committed; point the script at your originals when adding screenshots.
 
+### Where the Qurba screens came from
+
+Qurba has no store listing to screenshot, so its 23 screens were rendered from
+the source design files rather than mocked up. `scripts/capture-dc.mjs` takes a
+Claude Design `.dc.html` prototype, rewrites the initial `screen` state once per
+screen, serves the result, and captures each one with headless Chrome.
+`scripts/qurba-to-media.py` then trims the desktop captures, converts everything
+to WebP, and registers it in the manifest.
+
+Both scripts need the `.dc.html` sources and their `support.js`, which live in
+the design project, not in this repository.
+
 ## Design notes
 
 - One accent colour, vermilion, used identically across every section.

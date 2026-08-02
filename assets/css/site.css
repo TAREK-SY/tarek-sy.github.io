@@ -896,12 +896,14 @@ html[lang="ar"] .case-title {
   line-height: 1.5;
 }
 
-/* Gallery: a plain responsive grid, click to open the lightbox. */
+/* Gallery. A project can mix phone screens with desktop screens, so each tile
+   carries its own aspect ratio and wide tiles claim two columns. */
 .gallery {
   display: grid;
   gap: clamp(0.75rem, 2vw, 1.25rem);
   margin-block-start: var(--s-5);
   grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  align-items: start;
 }
 
 .gallery[data-orientation="landscape"] {
@@ -919,6 +921,10 @@ html[lang="ar"] .case-title {
     border-color var(--dur) var(--ease);
 }
 
+.gallery button[data-wide] {
+  grid-column: span 2;
+}
+
 .gallery button:hover {
   transform: translateY(-3px);
   border-color: var(--line-strong);
@@ -926,13 +932,12 @@ html[lang="ar"] .case-title {
 
 .gallery img {
   width: 100%;
-  aspect-ratio: 3 / 5;
+  height: 100%;
   object-fit: cover;
   object-position: top center;
 }
 
-.gallery[data-orientation="landscape"] img {
-  aspect-ratio: 16 / 10;
+.gallery button[data-wide] img {
   object-position: top left;
 }
 
