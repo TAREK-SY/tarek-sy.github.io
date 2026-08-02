@@ -23,12 +23,27 @@ function isLandscape(shots) {
    Sections
    ------------------------------------------------------------------------- */
 
+/**
+ * Two real product screens for the hero. They sit side by side, so the pair is
+ * chosen from one gallery whose shots share an aspect ratio: a mismatched pair
+ * makes the offset read as a layout bug rather than a composition.
+ */
+function heroShots(media) {
+  const shots = media.galleries.qurba ?? media.galleries.shella ?? [];
+  const ratio = (img) => img.h / img.w;
+  const tall = shots.filter((img) => ratio(img) > 1.8);
+  const first = tall[0];
+  if (!first) return [];
+  const match = tall.find(
+    (img) => img !== first && Math.abs(ratio(img) - ratio(first)) < 0.05,
+  );
+  return [first, match].filter(Boolean);
+}
+
 function heroSection(data) {
   const s = t();
   const { profile } = data;
-  const shots = data.media.galleries.shella ?? [];
-  // Two real product screenshots. No device chrome and no simulated UI.
-  const picks = [shots[16], shots[20]].filter(Boolean);
+  const picks = heroShots(data.media);
 
   const cv = profile.cv
     ? `<a class="btn btn-ghost" href="${esc(profile.cv)}" download>${icon("file-download")}${esc(s.downloadCv)}</a>`
@@ -62,9 +77,10 @@ function heroSection(data) {
           ${picks
             .map(
               (img, i) =>
+                // Both sit above the fold, so neither is lazy loaded.
                 `<img src="${esc(img.src)}" width="${img.w}" height="${img.h}"
-                   alt="${esc(s.screenshotAlt("Shella", i + 1))}"
-                   ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`,
+                   alt="${esc(s.screenshotAlt("Qurba", i + 1))}"
+                   ${i === 0 ? 'fetchpriority="high"' : ""} decoding="async">`,
             )
             .join("")}
         </div>
