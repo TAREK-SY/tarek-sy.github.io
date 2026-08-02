@@ -118,10 +118,31 @@ function render(data, project) {
     .querySelector('meta[name="description"]')
     ?.setAttribute("content", pick(project.summary));
 
+  const status = project.status
+    ? `<span class="badge">${esc(pick(project.status))}</span>`
+    : "";
+
+  const metrics = project.metrics?.length
+    ? `<section class="case-section shell" data-reveal>
+      <h2>${esc(s.byTheNumbers)}</h2>
+      <dl class="metric-row">
+        ${project.metrics
+          .map(
+            (m) => `
+          <div>
+            <dt class="mono">${esc(m.value)}</dt>
+            <dd>${esc(pick(m.label))}</dd>
+          </div>`,
+          )
+          .join("")}
+      </dl>
+    </section>`
+    : "";
+
   app.innerHTML = `
     <header class="case-head shell">
       <a class="back-link" href="index.html#work">${icon("arrow-narrow-left")}${esc(s.backToWork)}</a>
-      <h1 class="case-title">${esc(name)}</h1>
+      <h1 class="case-title">${esc(name)}${status}</h1>
       <p class="case-lead">${esc(pick(project.summary))}</p>
       <dl class="case-meta">
         ${metaRow(s.metaType, pick(project.kind))}
@@ -131,6 +152,8 @@ function render(data, project) {
       </dl>
       ${links ? `<div class="case-actions">${links}</div>` : ""}
     </header>
+
+    ${metrics}
 
     <section class="case-section shell" data-reveal>
       <h2>${esc(s.whatItTook)}</h2>

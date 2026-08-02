@@ -21,7 +21,7 @@ export const UI = {
     downloadCv: "Download CV",
     selectedWork: "Selected work",
     selectedWorkSub:
-      "Four products taken from first commit to store listing or live domain.",
+      "Seven projects across delivery, commerce, point-of-sale, and remote care.",
     skillsTitle: "Skills",
     skillsSub: "The stack I reach for, grouped by where it sits in a product.",
     experienceTitle: "Experience",
@@ -29,6 +29,7 @@ export const UI = {
     contactSub:
       "The fastest reply is on WhatsApp. Email works just as well for longer briefs.",
     caseStudy: "Case study",
+    byTheNumbers: "By the numbers",
     playStore: "Play Store",
     visitSite: "Visit site",
     backToWork: "Back to work",
@@ -73,13 +74,14 @@ export const UI = {
     downloadCv: "تحميل السيرة الذاتية",
     selectedWork: "أعمال مختارة",
     selectedWorkSub:
-      "أربعة منتجات أخذتها من أول commit حتى النشر على المتجر أو النطاق المباشر.",
+      "سبعة مشاريع في التوصيل والتجارة ونقاط البيع والرعاية عن بُعد.",
     skillsTitle: "المهارات",
     skillsSub: "الأدوات التي أعتمد عليها، مرتّبة حسب موقعها في المنتج.",
     experienceTitle: "الخبرة",
     contactStatement: "لديك شيء تريد بناءه؟",
     contactSub: "أسرع رد يكون عبر واتساب. والبريد مناسب للطلبات الأطول.",
     caseStudy: "تفاصيل المشروع",
+    byTheNumbers: "بالأرقام",
     playStore: "متجر Play",
     visitSite: "زيارة الموقع",
     backToWork: "العودة للأعمال",

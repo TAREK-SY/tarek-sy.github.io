@@ -1,79 +1,209 @@
 {
   "profile": {
     "name": { "en": "Tarek Nassan", "ar": "طارق نسان" },
-    "role": { "en": "Flutter and Web Developer", "ar": "مطوّر Flutter وويب" },
+    "role": { "en": "Flutter Developer", "ar": "مطوّر Flutter" },
     "headline": {
       "en": "Apps that hold up in production.",
       "ar": "تطبيقات تصمد في بيئة الإنتاج."
     },
     "summary": {
-      "en": "Five years building delivery platforms, commerce systems, and offline-first point-of-sale software.",
-      "ar": "خمس سنوات في بناء منصات توصيل وأنظمة تجارة وبرمجيات نقاط بيع تعمل دون اتصال."
+      "en": "Four years of production Flutter across delivery, commerce, point-of-sale, and field service.",
+      "ar": "أربع سنوات من Flutter الإنتاجي في التوصيل والتجارة ونقاط البيع والخدمات الميدانية."
     },
     "email": "tareknassan2015@gmail.com",
     "phone": "+963988450079",
     "whatsapp": "963988450079",
     "github": "https://github.com/TAREK-SY",
-    "linkedin": "",
-    "cv": ""
+    "linkedin": "https://linkedin.com/in/tarek-nassan",
+    "cv": "assets/Tarek_Nassan_CV.pdf",
+    "availability": {
+      "en": "Open to remote work worldwide",
+      "ar": "متاح للعمل عن بُعد عالمياً"
+    }
   },
+
+  "stats": [
+    {
+      "value": "6",
+      "label": { "en": "Production apps", "ar": "تطبيق إنتاجي" }
+    },
+    {
+      "value": "105,000+",
+      "label": { "en": "Lines of Dart", "ar": "سطر Dart" }
+    },
+    {
+      "value": "168",
+      "label": { "en": "Screens shipped", "ar": "شاشة مُسلَّمة" }
+    },
+    {
+      "value": "168",
+      "label": { "en": "REST endpoints consumed", "ar": "نقطة نهاية REST" }
+    }
+  ],
 
   "projects": [
     {
-      "slug": "shella",
-      "featured": true,
-      "name": { "en": "Shella", "ar": "شلة" },
-      "kind": { "en": "Food delivery platform", "ar": "منصة توصيل طعام" },
-      "year": "",
-      "role": { "en": "", "ar": "" },
+      "slug": "absher-client",
+      "name": { "en": "Absher Client", "ar": "أبشر - العميل" },
+      "kind": { "en": "Store discovery and discount cards", "ar": "اكتشاف متاجر وبطاقات خصم" },
+      "year": "2026",
+      "role": { "en": "Mobile developer at ELKOOD", "ar": "مطوّر موبايل في ELKOOD" },
       "summary": {
-        "en": "Food delivery app with live order tracking, multiple payment methods, and a driver dispatch system.",
-        "ar": "تطبيق توصيل طعام مع تتبّع مباشر للطلبات، وطرق دفع متعددة، ونظام إسناد للسائقين."
+        "en": "Customer app for finding partner stores on a map, holding discount cards, and following discount requests as their status changes live.",
+        "ar": "تطبيق عميل للعثور على المتاجر الشريكة على الخريطة، وإدارة بطاقات الخصم، ومتابعة طلبات الخصم مع تغيّر حالتها لحظياً."
       },
-      "tech": ["Flutter", "Dart", "Firebase", "GetX", "Google Maps API"],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "SignalR",
+        "OpenStreetMap",
+        "Firebase",
+        "SQLite",
+        "REST API"
+      ],
+      "metrics": [
+        { "value": "27", "label": { "en": "Screens", "ar": "شاشة" } },
+        { "value": "31", "label": { "en": "REST endpoints", "ar": "نقطة نهاية" } },
+        { "value": "28,349", "label": { "en": "Lines of Dart", "ar": "سطر Dart" } }
+      ],
       "challenges": [
         {
-          "en": "Live location tracking",
-          "ar": "تتبّع الموقع المباشر"
+          "en": "Discount request status arrives over a SignalR hub, so the screen never needs a manual refresh.",
+          "ar": "حالة طلب الخصم تصل عبر SignalR hub، فلا تحتاج الشاشة إلى تحديث يدوي إطلاقاً."
         },
         {
-          "en": "Payment gateway integration",
-          "ar": "تكامل بوابة الدفع"
+          "en": "Store logos are precached before the map draws, which removes the marker flicker on load.",
+          "ar": "شعارات المتاجر تُحمَّل مسبقاً قبل رسم الخريطة، ما يزيل وميض العلامات عند التحميل."
         },
         {
-          "en": "State management across long-running order flows",
-          "ar": "إدارة الحالة عبر تدفقات طلب طويلة الأمد"
+          "en": "Pagination is hand-rolled across five independent controllers rather than pulled from a package.",
+          "ar": "ترقيم الصفحات مكتوب يدوياً عبر خمس وحدات تحكم مستقلة بدل الاعتماد على حزمة جاهزة."
+        },
+        {
+          "en": "One central HTTP wrapper handles every response and network error across all 31 endpoints.",
+          "ar": "غلاف HTTP مركزي واحد يعالج كل استجابة وكل خطأ شبكة عبر نقاط النهاية الـ31."
         }
       ],
-      "links": {
-        "playStore": "https://play.google.com/store/apps/details?id=com.food.shala",
-        "website": ""
-      }
+      "links": { "playStore": "", "website": "" }
+    },
+    {
+      "slug": "yassir-provider",
+      "name": { "en": "Yassir Service Provider", "ar": "يسّر - مزوّد الخدمة" },
+      "kind": { "en": "Service provider platform", "ar": "منصة مزوّدي الخدمات" },
+      "year": "2026",
+      "role": { "en": "Sole developer, 226 of 226 commits", "ar": "مطوّر منفرد، 226 من 226 التزاماً" },
+      "summary": {
+        "en": "Companion app for service providers: manage incoming bookings, publish and price services, and track earnings.",
+        "ar": "تطبيق مرافق لمزوّدي الخدمات: إدارة الحجوزات الواردة، ونشر الخدمات وتسعيرها، ومتابعة الأرباح."
+      },
+      "tech": [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "OpenStreetMap",
+        "SQLite",
+        "easy_localization",
+        "PDF and Excel export",
+        "REST API"
+      ],
+      "metrics": [
+        { "value": "29", "label": { "en": "Screens", "ar": "شاشة" } },
+        { "value": "26,020", "label": { "en": "Lines of Dart", "ar": "سطر Dart" } },
+        { "value": "226", "label": { "en": "Commits in 6 weeks", "ar": "التزاماً في 6 أسابيع" } }
+      ],
+      "challenges": [
+        {
+          "en": "A memory leak in the map widget traced to an observer that was never removed on dispose.",
+          "ar": "تسرّب ذاكرة في ودجة الخريطة سببه observer لم يُزَل عند التخلّص من الودجة."
+        },
+        {
+          "en": "Search fires on a 400 ms debounce, so typing no longer sends a request per keystroke.",
+          "ar": "البحث ينفَّذ بعد تأخير 400 مللي ثانية، فلم تعد كل ضغطة مفتاح ترسل طلباً."
+        },
+        {
+          "en": "Twenty documented refactors across the commit history, aimed at shrinking controller logic.",
+          "ar": "عشرون إعادة هيكلة موثّقة في سجل الالتزامات، هدفها تقليص منطق وحدات التحكم."
+        },
+        {
+          "en": "Full Arabic and English localisation with RTL, driven by a single translation layer.",
+          "ar": "تعريب كامل بالعربية والإنجليزية مع RTL، مدفوع بطبقة ترجمة واحدة."
+        }
+      ],
+      "links": { "playStore": "", "website": "" }
+    },
+    {
+      "slug": "qurba",
+      "name": { "en": "Qurba", "ar": "قُربى" },
+      "kind": { "en": "Remote care platform, three apps", "ar": "منصة رعاية عن بُعد، ثلاثة تطبيقات" },
+      "year": "2026",
+      "role": { "en": "", "ar": "" },
+      "status": { "en": "Working prototype", "ar": "نموذج أوّلي عامل" },
+      "summary": {
+        "en": "Care platform for families supporting relatives inside Syria, built as three apps: customer, field agent, and operations dashboard. Runs end to end on mock data, with the live API layer written but not yet connected.",
+        "ar": "منصة رعاية للعائلات التي تدعم أقاربها داخل سوريا، مبنية كثلاثة تطبيقات: العميل، والوكيل الميداني، ولوحة العمليات. تعمل بالكامل على بيانات وهمية، وطبقة الـ API الحقيقية مكتوبة لكنها غير موصولة بعد."
+      },
+      "tech": [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "SQLite",
+        "either_dart",
+        "ScreenUtil",
+        "easy_localization"
+      ],
+      "metrics": [
+        { "value": "3", "label": { "en": "Connected apps", "ar": "تطبيق مترابط" } },
+        { "value": "48", "label": { "en": "Screens", "ar": "شاشة" } },
+        { "value": "13,867", "label": { "en": "Lines of Dart", "ar": "سطر Dart" } }
+      ],
+      "challenges": [
+        {
+          "en": "Concurrent 401 responses trigger exactly one token refresh, then the original requests retry.",
+          "ar": "استجابات 401 المتزامنة تُطلق تجديد توكن واحداً فقط، ثم تُعاد الطلبات الأصلية."
+        },
+        {
+          "en": "Network calls return Either rather than throwing, so failures cross layers as values.",
+          "ar": "نداءات الشبكة تُرجع Either بدل رمي الاستثناءات، فتعبر الإخفاقات الطبقات كقيم."
+        },
+        {
+          "en": "A single flag swaps every data source between mock fixtures and the live API path.",
+          "ar": "مفتاح واحد يبدّل كل مصادر البيانات بين البيانات الوهمية ومسار الـ API الحقيقي."
+        },
+        {
+          "en": "Every assumption about the unbuilt backend is tagged in code and tracked in a written file.",
+          "ar": "كل افتراض عن الخلفية غير المبنية موسوم في الكود ومُتتبَّع في ملف مكتوب."
+        }
+      ],
+      "links": { "playStore": "", "website": "" }
     },
     {
       "slug": "sahlha",
-      "featured": true,
       "name": { "en": "Sahlha Store", "ar": "سهلها" },
-      "kind": { "en": "Commerce ecosystem", "ar": "نظام تجارة متكامل" },
+      "kind": { "en": "Commerce and delivery", "ar": "تجارة وتوصيل" },
       "year": "",
-      "role": { "en": "", "ar": "" },
+      "role": { "en": "Sole developer", "ar": "مطوّر منفرد" },
       "summary": {
-        "en": "E-commerce platform built as four connected apps: customer, store manager, delivery driver, and admin dashboard.",
-        "ar": "منصة تجارة إلكترونية مبنية كأربعة تطبيقات مترابطة: العميل، ومدير المتجر، والسائق، ولوحة التحكم."
+        "en": "E-commerce and delivery app with pharmacy prescription orders, multi-address delivery, and live driver tracking on Google Maps.",
+        "ar": "تطبيق تجارة إلكترونية وتوصيل مع طلبات وصفات الصيدلية، وتوصيل لعناوين متعددة، وتتبّع مباشر للسائق على خرائط Google."
       },
-      "tech": ["Flutter", "Dart", "Firebase", "GetX", "REST API", "MySQL"],
+      "tech": ["Flutter", "Dart", "GetX", "Firebase", "Google Maps", "PHP", "MySQL"],
+      "metrics": [
+        { "value": "41", "label": { "en": "Screens", "ar": "شاشة" } },
+        { "value": "49", "label": { "en": "REST endpoints", "ar": "نقطة نهاية" } }
+      ],
       "challenges": [
         {
-          "en": "Keeping four apps in sync on one data model",
-          "ar": "إبقاء أربعة تطبيقات متزامنة على نموذج بيانات واحد"
+          "en": "Live order tracking built on the Google Directions API with polyline decoding written by hand.",
+          "ar": "تتبّع الطلب المباشر مبني على Google Directions API مع فكّ ترميز polyline مكتوب يدوياً."
         },
         {
-          "en": "Role-based access control",
-          "ar": "التحكم بالوصول حسب الدور"
+          "en": "Keeping the customer, store, driver, and admin surfaces on one consistent data model.",
+          "ar": "إبقاء واجهات العميل والمتجر والسائق والإدارة على نموذج بيانات واحد متسق."
         },
         {
-          "en": "Inventory consistency under concurrent orders",
-          "ar": "اتساق المخزون تحت الطلبات المتزامنة"
+          "en": "Inventory that stays correct when orders arrive at the same time.",
+          "ar": "مخزون يبقى صحيحاً عند وصول الطلبات في الوقت نفسه."
         }
       ],
       "links": {
@@ -83,51 +213,92 @@
     },
     {
       "slug": "maher-store",
-      "featured": true,
       "name": { "en": "Maher Store", "ar": "ماهر ستور" },
-      "kind": { "en": "Point-of-sale and accounting", "ar": "نقاط بيع ومحاسبة" },
+      "kind": { "en": "Offline-first POS and warehouse", "ar": "نقاط بيع ومستودع دون اتصال" },
       "year": "",
-      "role": { "en": "", "ar": "" },
+      "role": { "en": "Sole developer", "ar": "مطوّر منفرد" },
       "summary": {
-        "en": "Accounting system linking a central warehouse to multiple point-of-sale terminals, built offline-first with automatic sync.",
-        "ar": "نظام محاسبة يربط مستودعاً مركزياً بعدة نقاط بيع، مبني ليعمل دون اتصال أولاً مع مزامنة تلقائية."
+        "en": "Retail suite pairing a point-of-sale terminal with a warehouse app, tracking stock across three locations on a shared PHP backend.",
+        "ar": "حزمة تجزئة تجمع نقطة بيع مع تطبيق مستودع، وتتابع المخزون عبر ثلاثة مواقع على خلفية PHP مشتركة."
       },
-      "tech": ["Flutter", "Dart", "SQLite", "GetX", "REST API"],
+      "tech": ["Flutter", "Dart", "GetX", "SQLite", "ESC/POS", "PDF export", "PHP", "MySQL"],
+      "metrics": [
+        { "value": "3", "label": { "en": "Stock locations", "ar": "موقع مخزون" } },
+        { "value": "32", "label": { "en": "REST endpoints", "ar": "نقطة نهاية" } },
+        { "value": "10", "label": { "en": "Local database tables", "ar": "جدول قاعدة بيانات محلية" } }
+      ],
       "challenges": [
         {
-          "en": "Offline-first architecture",
-          "ar": "معمارية تعمل دون اتصال أولاً"
+          "en": "Sales keep working through an internet outage: orders queue locally and sync on reconnect.",
+          "ar": "المبيعات تستمر أثناء انقطاع الإنترنت: الطلبات تُصفّ محلياً وتُزامَن عند عودة الاتصال."
         },
         {
-          "en": "Conflict resolution during sync",
-          "ar": "حلّ التعارضات أثناء المزامنة"
+          "en": "Bluetooth thermal receipt printing over ESC/POS, plus Arabic-font PDF invoice export.",
+          "ar": "طباعة إيصالات حرارية عبر البلوتوث بـ ESC/POS، مع تصدير فواتير PDF بخط عربي."
         },
         {
-          "en": "Financial calculations that must reconcile exactly",
-          "ar": "حسابات مالية يجب أن تتطابق بدقة"
+          "en": "Live schema migration on a ten-table local database already holding customer data.",
+          "ar": "ترحيل مخطط حيّ على قاعدة بيانات محلية بعشرة جداول تحمل بيانات عملاء فعلية."
         }
       ],
       "links": { "playStore": "", "website": "" }
     },
     {
-      "slug": "alpha-gbc",
-      "featured": true,
-      "name": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
-      "kind": { "en": "Corporate website", "ar": "موقع مؤسسي" },
+      "slug": "shella",
+      "name": { "en": "Shella", "ar": "شلة" },
+      "kind": { "en": "Food delivery", "ar": "توصيل طعام" },
       "year": "",
       "role": { "en": "", "ar": "" },
       "summary": {
-        "en": "Corporate website for a technology and logistics company, covering services and delivered work.",
-        "ar": "موقع مؤسسي لشركة حلول تقنية ولوجستية، يعرض الخدمات والأعمال المنجزة."
+        "en": "Food delivery app with live order tracking, multiple payment methods, and a driver dispatch system.",
+        "ar": "تطبيق توصيل طعام مع تتبّع مباشر للطلبات، وطرق دفع متعددة، ونظام إسناد للسائقين."
       },
-      "tech": ["React", "PHP", "MySQL", "REST API"],
+      "tech": ["Flutter", "Dart", "Firebase", "GetX", "Google Maps API"],
+      "metrics": [],
       "challenges": [
         {
-          "en": "Responsive layout across a wide device range",
-          "ar": "تخطيط متجاوب عبر مدى واسع من الأجهزة"
+          "en": "Live location tracking through a long-running order lifecycle.",
+          "ar": "تتبّع الموقع المباشر عبر دورة حياة طلب طويلة الأمد."
         },
-        { "en": "Search engine optimisation", "ar": "تحسين محركات البحث" },
-        { "en": "Load performance", "ar": "أداء التحميل" }
+        {
+          "en": "Payment gateway integration.",
+          "ar": "تكامل بوابة الدفع."
+        },
+        {
+          "en": "State management across order flows that stay open for a long time.",
+          "ar": "إدارة الحالة عبر تدفقات طلب تبقى مفتوحة لوقت طويل."
+        }
+      ],
+      "links": {
+        "playStore": "https://play.google.com/store/apps/details?id=com.food.shala",
+        "website": ""
+      }
+    },
+    {
+      "slug": "alpha-gbc",
+      "name": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
+      "kind": { "en": "Corporate website", "ar": "موقع مؤسسي" },
+      "year": "2023 - 2024",
+      "role": { "en": "Team leader, 4 to 6 developers", "ar": "قائد فريق من 4 إلى 6 مطوّرين" },
+      "summary": {
+        "en": "Corporate website for a technology and logistics company, delivered while leading the development team.",
+        "ar": "موقع مؤسسي لشركة حلول تقنية ولوجستية، سُلّم أثناء قيادتي لفريق التطوير."
+      },
+      "tech": ["React", "PHP", "MySQL", "REST API"],
+      "metrics": [],
+      "challenges": [
+        {
+          "en": "Running daily stand-ups and coordinating feature delivery against committed deadlines.",
+          "ar": "إدارة اجتماعات يومية وتنسيق تسليم الميزات وفق مواعيد ملتزَم بها."
+        },
+        {
+          "en": "Introducing structured code review and shared coding standards across the team.",
+          "ar": "إدخال مراجعة كود منظّمة ومعايير كتابة موحّدة عبر الفريق."
+        },
+        {
+          "en": "Responsive layout, search engine optimisation, and load performance.",
+          "ar": "تخطيط متجاوب، وتحسين محركات البحث، وأداء التحميل."
+        }
       ],
       "links": { "playStore": "", "website": "https://alphagbc.com" }
     }
@@ -135,57 +306,121 @@
 
   "skills": [
     {
-      "label": { "en": "Mobile", "ar": "الموبايل" },
-      "items": ["Flutter", "Dart", "GetX", "Material Design"]
+      "label": { "en": "Mobile and front-end", "ar": "الموبايل والواجهة" },
+      "items": [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "ScreenUtil",
+        "Arabic and English RTL",
+        "Reusable widgets",
+        "Skeleton loading states"
+      ]
     },
     {
-      "label": { "en": "Backend and data", "ar": "الخلفية والبيانات" },
-      "items": ["PHP", "MySQL", "Firebase", "SQLite", "REST APIs"]
+      "label": { "en": "Data and offline", "ar": "البيانات والعمل دون اتصال" },
+      "items": [
+        "SQLite (sqflite)",
+        "Schema migrations",
+        "Offline-first sync",
+        "Local request queues",
+        "Secure local storage"
+      ]
     },
     {
-      "label": { "en": "Platform features", "ar": "ميزات المنصة" },
-      "items": ["Geolocation", "Push notifications", "Google Maps API", "Offline sync"]
+      "label": { "en": "Real-time and Firebase", "ar": "اللحظي و Firebase" },
+      "items": [
+        "SignalR",
+        "Firebase Auth",
+        "Cloud Firestore",
+        "Cloud Messaging",
+        "Deep links",
+        "Push notifications"
+      ]
     },
     {
-      "label": { "en": "Web", "ar": "الويب" },
-      "items": ["React", "HTML", "CSS", "JavaScript"]
+      "label": { "en": "Integrations", "ar": "التكاملات" },
+      "items": [
+        "Google Maps and Directions",
+        "OpenStreetMap",
+        "Geolocation and geocoding",
+        "QR and barcode scanning",
+        "Bluetooth thermal printing (ESC/POS)",
+        "PDF and Excel export",
+        "Image compression"
+      ]
     },
     {
-      "label": { "en": "Tooling", "ar": "الأدوات" },
-      "items": ["Git", "GitHub"]
+      "label": { "en": "Supporting backend", "ar": "الخلفية المساندة" },
+      "items": ["REST API integration", "PHP", "MySQL"]
+    },
+    {
+      "label": { "en": "Tools and practices", "ar": "الأدوات والممارسات" },
+      "items": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Code review",
+        "Layered architecture",
+        "Either error handling"
+      ]
     }
   ],
 
   "experience": [
     {
-      "period": "2021 - Present",
-      "position": { "en": "Freelance Developer", "ar": "مطوّر مستقل" },
+      "period": "Feb 2026 - Jun 2026",
+      "periodAr": "شباط 2026 - حزيران 2026",
+      "position": { "en": "Mobile Developer", "ar": "مطوّر موبايل" },
+      "company": { "en": "ELKOOD", "ar": "ELKOOD" },
+      "description": {
+        "en": "Shipped two production Flutter apps totalling 54,000 lines of Dart across 56 screens: a client marketplace and a service-provider platform.",
+        "ar": "أطلقت تطبيقَي Flutter إنتاجيَّين بمجموع 54,000 سطر Dart عبر 56 شاشة: سوق للعملاء ومنصة لمزوّدي الخدمات."
+      },
+      "tech": ["Flutter", "GetX", "SignalR", "OpenStreetMap"]
+    },
+    {
+      "period": "Jun 2022 - Present",
+      "periodAr": "حزيران 2022 - الآن",
+      "position": { "en": "Freelance Flutter Developer", "ar": "مطوّر Flutter مستقل" },
       "company": { "en": "Self-employed", "ar": "عمل حر" },
       "description": {
-        "en": "Built and shipped Sahlha Store, Maher Store, and the Alpha GBC website end to end.",
-        "ar": "بناء وإطلاق سهلها وماهر ستور وموقع ألفا جي بي سي من البداية للنهاية."
+        "en": "Delivered 10 or more mobile and web projects for retail, pharmacy, and delivery clients, owning each one from requirements to release.",
+        "ar": "سلّمت عشرة مشاريع موبايل وويب أو أكثر لعملاء في التجزئة والصيدلة والتوصيل، وتوليت كلاً منها من المتطلبات حتى الإطلاق."
       },
-      "tech": ["Flutter", "React", "Firebase", "MySQL"]
+      "tech": ["Flutter", "PHP", "MySQL", "SQLite"]
     },
     {
-      "period": "2022 - 2024",
-      "position": { "en": "Technical Lead", "ar": "قائد تقني" },
-      "company": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
-      "description": {
-        "en": "Led the development team across multiple projects and set the architecture for scalable delivery.",
-        "ar": "قيادة فريق التطوير عبر عدة مشاريع، ووضع المعمارية اللازمة للتسليم القابل للتوسّع."
-      },
-      "tech": ["Flutter", "React", "PHP", "MySQL"]
-    },
-    {
-      "period": "2020 - 2022",
-      "position": { "en": "Mobile Developer", "ar": "مطوّر موبايل" },
+      "period": "Jun 2024 - Nov 2024",
+      "periodAr": "حزيران 2024 - تشرين الثاني 2024",
+      "position": { "en": "Software Developer", "ar": "مطوّر برمجيات" },
       "company": { "en": "Portal Logic", "ar": "بورتال لوجيك" },
       "description": {
-        "en": "Built and maintained Flutter applications for a range of client briefs.",
-        "ar": "بناء وصيانة تطبيقات Flutter لمجموعة من متطلبات العملاء."
+        "en": "Cut front-end load time by 30 percent through code restructuring and lazy loading, and standardised the interface with reusable widgets.",
+        "ar": "خفّضت زمن تحميل الواجهة بنسبة 30 بالمئة عبر إعادة هيكلة الكود والتحميل الكسول، ووحّدت الواجهة بودجات قابلة لإعادة الاستخدام."
       },
-      "tech": ["Flutter", "Firebase", "GetX"]
+      "tech": ["Flutter", "Dart"]
+    },
+    {
+      "period": "Jan 2023 - Apr 2024",
+      "periodAr": "كانون الثاني 2023 - نيسان 2024",
+      "position": { "en": "Team Leader", "ar": "قائد فريق" },
+      "company": { "en": "Alpha GBC", "ar": "ألفا جي بي سي" },
+      "description": {
+        "en": "Led a team of four to six developers, ran daily stand-ups, and raised code quality by introducing structured review and shared standards.",
+        "ar": "قدت فريقاً من أربعة إلى ستة مطوّرين، وأدرت اجتماعات يومية، ورفعت جودة الكود بإدخال مراجعة منظّمة ومعايير موحّدة."
+      },
+      "tech": ["Flutter", "React", "PHP", "MySQL"]
     }
-  ]
+  ],
+
+  "education": {
+    "degree": {
+      "en": "Bachelor of Engineering in Communications",
+      "ar": "بكالوريوس هندسة اتصالات"
+    },
+    "institution": { "en": "University of Aleppo", "ar": "جامعة حلب" },
+    "period": "2018 - 2023",
+    "periodAr": "2018 - 2023"
+  }
 }

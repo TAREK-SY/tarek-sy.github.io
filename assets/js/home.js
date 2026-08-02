@@ -72,6 +72,27 @@ function heroSection(data) {
     </section>`;
 }
 
+/**
+ * Projects without screenshots fall back to their measured numbers. The figure
+ * block is not decoration: it is the only visual the entry has, so it takes the
+ * slot the media would occupy rather than leaving a hole in the grid.
+ */
+function metricPanel(project, s) {
+  if (!project.metrics?.length) return "";
+  return `
+    <dl class="metric-panel">
+      ${project.metrics
+        .map(
+          (m) => `
+        <div>
+          <dt class="mono">${esc(m.value)}</dt>
+          <dd>${esc(pick(m.label))}</dd>
+        </div>`,
+        )
+        .join("")}
+    </dl>`;
+}
+
 function workItem(project, media, s) {
   const shots = media.galleries[project.slug] ?? [];
   const landscape = isLandscape(shots);
@@ -106,12 +127,20 @@ function workItem(project, media, s) {
     )
     .join("");
 
+  const visual = thumbs
+    ? `<a class="work-media" href="${href}" tabindex="-1" aria-hidden="true"
+         ${landscape ? 'data-orientation="landscape"' : ""}>${thumbs}</a>`
+    : metricPanel(project, s);
+
+  const status = project.status
+    ? `<span class="badge">${esc(pick(project.status))}</span>`
+    : "";
+
   return `
-    <article class="work-item" data-reveal>
-      <a class="work-media" href="${href}" tabindex="-1" aria-hidden="true"
-         ${landscape ? 'data-orientation="landscape"' : ""}>${thumbs}</a>
+    <article class="work-item${thumbs ? "" : " work-item--figures"}" data-reveal>
+      ${visual}
       <div class="work-body">
-        <p class="work-kind">${esc(pick(project.kind))}</p>
+        <p class="work-kind">${esc(pick(project.kind))}${status}</p>
         <h3><a href="${href}">${esc(name)}</a></h3>
         <p class="work-summary">${esc(pick(project.summary))}</p>
         <ul class="chips">
@@ -123,6 +152,28 @@ function workItem(project, media, s) {
         </div>
       </div>
     </article>`;
+}
+
+/**
+ * Career totals. These sit below the hero rather than inside it, because the
+ * hero carries the value proposition and one primary action, nothing else.
+ */
+function statsSection(data) {
+  if (!data.stats?.length) return "";
+  return `
+    <section class="stats-band">
+      <dl class="shell stats-grid" data-reveal>
+        ${data.stats
+          .map(
+            (stat) => `
+          <div>
+            <dt class="mono">${esc(stat.value)}</dt>
+            <dd>${esc(pick(stat.label))}</dd>
+          </div>`,
+          )
+          .join("")}
+      </dl>
+    </section>`;
 }
 
 function workSection(data) {
@@ -173,7 +224,9 @@ function experienceSection(data) {
           .map(
             (item) => `
           <article class="exp-item" data-reveal>
-            <p class="exp-period">${esc(item.period)}</p>
+            <p class="exp-period">${esc(
+              getLang() === "ar" && item.periodAr ? item.periodAr : item.period,
+            )}</p>
             <div>
               <h3>${esc(pick(item.position))}</h3>
               <p class="exp-company">${esc(pick(item.company))}</p>
@@ -241,11 +294,17 @@ function contactSection(data) {
 function footer(data) {
   const s = t();
   const year = new Date().getFullYear();
+  const edu = data.education;
+  const eduLine = edu
+    ? `<p>${esc(pick(edu.degree))}, ${esc(pick(edu.institution))}, ${esc(
+        getLang() === "ar" && edu.periodAr ? edu.periodAr : edu.period,
+      )}</p>`
+    : "";
   return `
     <footer class="footer">
       <div class="shell footer-inner">
         <p>&copy; ${year} ${esc(pick(data.profile.name))}. ${esc(s.rights)}</p>
-        <p><a href="${esc(data.profile.github)}" target="_blank" rel="noopener noreferrer">${esc(s.github)}</a></p>
+        ${eduLine}
       </div>
     </footer>`;
 }
@@ -282,6 +341,7 @@ function render(data) {
   paintChrome(data);
   app.innerHTML = [
     heroSection(data),
+    statsSection(data),
     workSection(data),
     skillsSection(data),
     experienceSection(data),

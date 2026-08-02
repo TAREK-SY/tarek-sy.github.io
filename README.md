@@ -53,13 +53,16 @@ update contact details.
 ```jsonc
 {
   "slug": "my-project",
-  "featured": true,
   "name":    { "en": "My Project", "ar": "مشروعي" },
   "kind":    { "en": "Mobile app", "ar": "تطبيق موبايل" },
   "year":    "2025",
   "role":    { "en": "Sole developer", "ar": "مطوّر منفرد" },
+  "status":  { "en": "Working prototype", "ar": "نموذج أوّلي" },  // optional badge
   "summary": { "en": "One or two sentences.", "ar": "جملة أو جملتان." },
   "tech":    ["Flutter", "Dart"],
+  "metrics": [
+    { "value": "27", "label": { "en": "Screens", "ar": "شاشة" } }
+  ],
   "challenges": [
     { "en": "The hard part", "ar": "الجزء الصعب" }
   ],
@@ -68,7 +71,14 @@ update contact details.
 ```
 
 Empty strings are omitted from the page rather than rendered blank, so it is
-safe to leave `year`, `role`, or either link unset.
+safe to leave `year`, `role`, `status`, or either link unset.
+
+`metrics` doubles as the fallback visual: a project with screenshots shows a
+thumbnail strip, and a project without them shows its figures in that slot
+instead. Add screenshots and the strip takes over automatically.
+
+The same file also drives `stats` (the band under the hero), `skills`,
+`experience`, and `education`.
 
 ## Asset generators
 
