@@ -7,8 +7,8 @@
       "ar": "تطبيقات تصمد في بيئة الإنتاج."
     },
     "summary": {
-      "en": "Four years of production Flutter across delivery, commerce, point-of-sale, and field service.",
-      "ar": "أربع سنوات من Flutter الإنتاجي في التوصيل والتجارة ونقاط البيع والخدمات الميدانية."
+      "en": "Four years of production Flutter across delivery, commerce, point-of-sale, and field service. Based in Syria (UTC+3), open to remote roles.",
+      "ar": "أربع سنوات من Flutter الإنتاجي في التوصيل والتجارة ونقاط البيع والخدمات الميدانية. مقيم في سوريا (UTC+3) ومتاح للعمل عن بُعد."
     },
     "email": "tareknassan2015@gmail.com",
     "phone": "+963988450079",
@@ -357,6 +357,19 @@
     {
       "label": { "en": "Supporting backend", "ar": "الخلفية المساندة" },
       "items": ["REST API integration", "PHP", "MySQL"]
+    },
+    {
+      "label": { "en": "Testing and release", "ar": "الاختبار والإصدار" },
+      "items": [
+        "Unit, widget and integration tests",
+        "mockito",
+        "GitHub Actions",
+        "Fastlane",
+        "Codemagic",
+        "Firebase App Distribution",
+        "Shorebird code push",
+        "Google Play and TestFlight releases"
+      ]
     },
     {
       "label": { "en": "Tools and practices", "ar": "الأدوات والممارسات" },
